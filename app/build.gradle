@@ -11,10 +11,19 @@ android {
         versionCode 121
         versionName "0.9.9.4"
     }
+   signingConfigs {
+        release {
+            storeFile file("TeamOctOs_testing.jks")
+            storePassword "password"
+            keyAlias "TeamOctOs_testing"
+            keyPassword "password"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     lintOptions {
