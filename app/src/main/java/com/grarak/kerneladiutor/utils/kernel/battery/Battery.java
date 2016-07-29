@@ -67,11 +67,12 @@ public class Battery {
     }
 
     public static void setBlx(int value, Context context) {
-        run(Control.write(String.valueOf(value), BLX), BLX, context);
+        run(Control.write(String.valueOf(value == 0 ? 101 : value - 1), BLX), BLX, context);
     }
 
     public static int getBlx() {
-        return Utils.strToInt(Utils.readFile(BLX));
+        int value = Utils.strToInt(Utils.readFile(BLX));
+        return value > 100 ? 0 : value + 1;
     }
 
     public static boolean hasBlx() {
