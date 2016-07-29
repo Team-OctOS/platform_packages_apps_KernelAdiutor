@@ -61,8 +61,7 @@ import java.util.List;
  */
 public class RecoveryFragment extends RecyclerViewFragment {
 
-    private int mRecoveryOption;
-
+    private OptionsFragment mOptionsFragment;
     private AlertDialog.Builder mAddDialog;
     private AlertDialog.Builder mFlashDialog;
 
@@ -89,8 +88,7 @@ public class RecoveryFragment extends RecyclerViewFragment {
     protected void init() {
         super.init();
 
-        mRecoveryOption = Prefs.getInt("recovery_option", 0, getActivity());
-        addViewPagerFragment(OptionsFragment.newInstance(this));
+        addViewPagerFragment(mOptionsFragment = OptionsFragment.newInstance(this));
 
         if (mAddDialog != null) {
             mAddDialog.show();
@@ -125,7 +123,7 @@ public class RecoveryFragment extends RecyclerViewFragment {
                         break;
                     case 2:
                         Intent intent = new Intent(getActivity(), FilePickerActivity.class);
-                        intent.putExtra(FilePickerActivity.PATH_INTENT, "/");
+                        intent.putExtra(FilePickerActivity.PATH_INTENT, "/sdcard");
                         intent.putExtra(FilePickerActivity.EXTENSION_INTENT, ".zip");
                         startActivityForResult(intent, 0);
                         break;
@@ -194,7 +192,7 @@ public class RecoveryFragment extends RecyclerViewFragment {
         }
     }
 
-    private void flashNow() {
+    private void flashNow(final int recoveryOption) {
         mFlashDialog = ViewUtils.dialogBuilder(getString(R.string.flash_now_confirm),
                 new DialogInterface.OnClickListener() {
                     @Override
@@ -203,12 +201,12 @@ public class RecoveryFragment extends RecyclerViewFragment {
                 }, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String file = "/cache/recovery/" + mCommands.get(0).getFile(mRecoveryOption == 1 ?
+                        String file = "/cache/recovery/" + mCommands.get(0).getFile(recoveryOption == 1 ?
                                 Recovery.RECOVERY.TWRP : Recovery.RECOVERY.CWM);
                         RootFile recoveryFile = new RootFile(file);
                         recoveryFile.delete();
                         for (Recovery commands : mCommands) {
-                            for (String command : commands.getCommands(mRecoveryOption == 1 ?
+                            for (String command : commands.getCommands(recoveryOption == 1 ?
                                     Recovery.RECOVERY.TWRP :
                                     Recovery.RECOVERY.CWM))
                                 recoveryFile.write(command, true);
@@ -232,11 +230,13 @@ public class RecoveryFragment extends RecyclerViewFragment {
         }
 
         private RecoveryFragment mRecoveryFragment;
+        private int mRecoveryOption;
 
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                                  @Nullable Bundle savedInstanceState) {
+            mRecoveryOption = Prefs.getInt("recovery_option", 0, getActivity());
             LinearLayout layout = new LinearLayout(getActivity());
             layout.setGravity(Gravity.CENTER);
             layout.setOrientation(LinearLayout.VERTICAL);
@@ -247,7 +247,7 @@ public class RecoveryFragment extends RecyclerViewFragment {
                 AppCompatCheckBox checkBox = new AppCompatCheckBox(getActivity());
                 checkBox.setText(options[i]);
                 checkBox.setTextColor(ContextCompat.getColor(getActivity(), R.color.white));
-                checkBox.setChecked(i == mRecoveryFragment.mRecoveryOption);
+                checkBox.setChecked(i == mRecoveryOption);
                 checkBox.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT));
 
@@ -259,7 +259,7 @@ public class RecoveryFragment extends RecyclerViewFragment {
                             checkBoxes.get(i).setChecked(position == i);
                         }
                         Prefs.saveInt("recovery_option", position, getActivity());
-                        mRecoveryFragment.mRecoveryOption = position;
+                        mRecoveryOption = position;
                     }
                 });
 
@@ -275,8 +275,8 @@ public class RecoveryFragment extends RecyclerViewFragment {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (mRecoveryFragment.itemsSize() > 0) {
-                        mRecoveryFragment.flashNow();
+                    if (mRecoveryFragment != null && mRecoveryFragment.itemsSize() > 0) {
+                        mRecoveryFragment.flashNow(mRecoveryOption);
                     } else {
                         Utils.toast(R.string.add_action_first, getActivity());
                     }

@@ -71,9 +71,11 @@ public class Service extends android.app.Service {
         super.onStart(intent, startId);
 
         Messenger messenger = null;
-        Bundle extras = intent.getExtras();
-        if (extras != null) {
-            messenger = (Messenger) extras.get("messenger");
+        if (intent != null) {
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                messenger = (Messenger) extras.get("messenger");
+            }
         }
 
         boolean enabled = false;

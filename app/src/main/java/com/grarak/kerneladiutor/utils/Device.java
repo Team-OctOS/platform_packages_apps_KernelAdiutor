@@ -275,8 +275,8 @@ public class Device {
         }
     }
 
-    public static String getKernelVersion() {
-        return RootUtils.runCommand("uname -r");
+    public static String getKernelVersion(boolean extended) {
+        return extended ? Utils.readFile("/proc/version") : RootUtils.runCommand("uname -r");
     }
 
     public static String getArchitecture() {

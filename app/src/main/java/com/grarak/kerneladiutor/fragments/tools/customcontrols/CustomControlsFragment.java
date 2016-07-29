@@ -98,7 +98,7 @@ public class CustomControlsFragment extends RecyclerViewFragment {
                     case 1:
                         if (Utils.DONATED) {
                             Intent intent = new Intent(getActivity(), FilePickerActivity.class);
-                            intent.putExtra(FilePickerActivity.PATH_INTENT, "/");
+                            intent.putExtra(FilePickerActivity.PATH_INTENT, "/sdcard");
                             intent.putExtra(FilePickerActivity.EXTENSION_INTENT, ".json");
                             startActivityForResult(intent, 1);
                         } else {

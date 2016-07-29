@@ -46,7 +46,6 @@ import java.util.List;
 public class CPUVoltage extends RecyclerViewFragment {
 
     private List<GenericSelectView> mVoltages = new ArrayList<>();
-    private int mGlobaloffset;
 
     @Override
     public int getSpanCount() {
@@ -132,6 +131,7 @@ public class CPUVoltage extends RecyclerViewFragment {
         }
 
         private CPUVoltage mCPUVoltage;
+        private int mGlobaloffset;
 
         @Override
         protected boolean retainInstance() {
@@ -144,33 +144,37 @@ public class CPUVoltage extends RecyclerViewFragment {
                                  @Nullable Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_global_offset, container, false);
             final TextView offset = (TextView) rootView.findViewById(R.id.offset);
-            offset.setText(Utils.strFormat("%d" + getString(R.string.mv), mCPUVoltage.mGlobaloffset));
+            offset.setText(Utils.strFormat("%d" + getString(R.string.mv), mGlobaloffset));
             rootView.findViewById(R.id.button_minus).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mCPUVoltage.mGlobaloffset -= 5;
-                    offset.setText(Utils.strFormat("%d" + getString(R.string.mv), mCPUVoltage.mGlobaloffset));
+                    mGlobaloffset -= 5;
+                    offset.setText(Utils.strFormat("%d" + getString(R.string.mv), mGlobaloffset));
                     Voltage.setGlobalOffset(-5, getActivity());
-                    mCPUVoltage.getHandler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mCPUVoltage.reload();
-                        }
-                    }, 200);
+                    if (mCPUVoltage != null) {
+                        mCPUVoltage.getHandler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                mCPUVoltage.reload();
+                            }
+                        }, 200);
+                    }
                 }
             });
             rootView.findViewById(R.id.button_plus).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mCPUVoltage.mGlobaloffset += 5;
-                    offset.setText(Utils.strFormat("%d" + getString(R.string.mv), mCPUVoltage.mGlobaloffset));
+                    mGlobaloffset += 5;
+                    offset.setText(Utils.strFormat("%d" + getString(R.string.mv), mGlobaloffset));
                     Voltage.setGlobalOffset(5, getActivity());
-                    mCPUVoltage.getHandler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mCPUVoltage.reload();
-                        }
-                    }, 200);
+                    if (mCPUVoltage != null) {
+                        mCPUVoltage.getHandler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                mCPUVoltage.reload();
+                            }
+                        }, 200);
+                    }
                 }
             });
             return rootView;

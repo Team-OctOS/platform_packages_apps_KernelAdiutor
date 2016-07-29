@@ -75,7 +75,7 @@ public class DeviceFragment extends RecyclerViewFragment {
         String[][] boardInfos = {
                 {getString(R.string.hardware), Device.getHardware()},
                 {getString(R.string.architecture), Device.getArchitecture()},
-                {getString(R.string.kernel), Device.getKernelVersion()}
+                {getString(R.string.kernel), Device.getKernelVersion(true)}
         };
 
         CardView deviceCard = new CardView(getActivity());

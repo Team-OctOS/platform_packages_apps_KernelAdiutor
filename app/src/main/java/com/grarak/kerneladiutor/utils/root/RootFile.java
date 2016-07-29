@@ -111,6 +111,10 @@ public class RootFile {
         return new RootFile(mSU.runCommand("dirname \"" + mFile + "\""), mSU);
     }
 
+    public RootFile getRealPath() {
+        return new RootFile(mSU.runCommand("realpath \"" + mFile + "\""), mSU);
+    }
+
     public boolean isEmpty() {
         return "false".equals(mSU.runCommand("find '" + mFile + "' -mindepth 1 | read || echo false"));
     }
