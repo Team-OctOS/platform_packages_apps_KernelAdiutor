@@ -35,7 +35,6 @@
 
     <!-- Permissions Denied -->
     <string name="permission_denied_write_storage">Permission denied for writing to storage!</string>
-    <string name="permission_denied_fingerprint">Permission denied for reading fingerprints!</string>
 
     <!-- Editor -->
     <string name="save">Save</string>
