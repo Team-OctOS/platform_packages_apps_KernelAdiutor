@@ -114,7 +114,7 @@ public class MainActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 0) {
-            launch(data.getIntExtra("result", -1));
+            launch(data == null ? -1 : data.getIntExtra("result", -1));
         } else if (requestCode == 1) {
             launch(0);
         } else if (requestCode == 2) {
