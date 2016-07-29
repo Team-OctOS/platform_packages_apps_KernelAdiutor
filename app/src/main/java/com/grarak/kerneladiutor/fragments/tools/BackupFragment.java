@@ -262,7 +262,7 @@ public class BackupFragment extends RecyclerViewFragment {
                         break;
                     case 1:
                         Intent intent = new Intent(getActivity(), FilePickerActivity.class);
-                        intent.putExtra(FilePickerActivity.PATH_INTENT, "/");
+                        intent.putExtra(FilePickerActivity.PATH_INTENT, "/sdcard");
                         intent.putExtra(FilePickerActivity.EXTENSION_INTENT, ".img");
                         startActivityForResult(intent, 0);
                         break;
@@ -386,7 +386,7 @@ public class BackupFragment extends RecyclerViewFragment {
 
     private void backup(final Backup.PARTITION partition) {
         mBackupPartition = partition;
-        ViewUtils.dialogEditText(partition == Backup.PARTITION.BOOT ? Device.getKernelVersion() : null,
+        ViewUtils.dialogEditText(partition == Backup.PARTITION.BOOT ? Device.getKernelVersion(false) : null,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

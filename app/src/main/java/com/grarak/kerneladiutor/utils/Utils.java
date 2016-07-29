@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.res.Configuration;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -32,6 +33,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.view.ViewCompat;
 import android.text.Html;
+import android.util.Base64;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -54,12 +56,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -69,8 +73,35 @@ public class Utils {
 
     private static final String TAG = Utils.class.getSimpleName();
     public static boolean DONATED = BuildConfig.DEBUG;
+    public static boolean DARK_THEME;
 
     private static final Set<CustomTarget> mProtectedFromGarbageCollectorTargets = new HashSet<>();
+
+    public static String decodeString(String text) {
+        try {
+            return new String(Base64.decode(text, Base64.DEFAULT), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String encodeString(String text) {
+        try {
+            return Base64.encodeToString(text.getBytes("UTF-8"), Base64.DEFAULT);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void setLocale(String lang, Context context) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        context.getApplicationContext().getResources().updateConfiguration(config, null);
+    }
 
     public static boolean hasCMSDK() {
         return cyanogenmod.os.Build.CM_VERSION.SDK_INT >= cyanogenmod.os.Build.CM_VERSION_CODES.APRICOT;
@@ -212,7 +243,7 @@ public class Utils {
             if (file.isDirectory()) {
                 RootFile rootFile = findExtension(file, extension);
                 if (rootFile != null) return rootFile;
-            } else if (file.getName().endsWith(extension)) {
+            } else if (file.getName() != null && file.getName().endsWith(extension)) {
                 return file;
             }
         }
@@ -343,6 +374,13 @@ public class Utils {
 
     public static boolean isRTL(View view) {
         return ViewCompat.getLayoutDirection(view) == ViewCompat.LAYOUT_DIRECTION_RTL;
+    }
+
+    public static float getActionBarSize(Context context) {
+        TypedArray typedArray = context.obtainStyledAttributes(new int[]{R.attr.actionBarSize});
+        float size = typedArray.getDimension(0, 0);
+        typedArray.recycle();
+        return size;
     }
 
     public static int getColorPrimaryColor(Context context) {

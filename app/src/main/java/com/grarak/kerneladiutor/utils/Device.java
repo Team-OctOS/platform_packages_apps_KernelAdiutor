@@ -275,8 +275,8 @@ public class Device {
         }
     }
 
-    public static String getKernelVersion() {
-        return RootUtils.runCommand("uname -r");
+    public static String getKernelVersion(boolean extended) {
+        return extended ? Utils.readFile("/proc/version") : RootUtils.runCommand("uname -r");
     }
 
     public static String getArchitecture() {
@@ -321,8 +321,9 @@ public class Device {
 
     public static String getBoard() {
         String hardware = CPUInfo.getVendor().toLowerCase();
-        if (hardware.matches(".*msm\\d*")) {
-            return "msm" + hardware.split("msm")[1].trim();
+        if (hardware.matches(".*msm\\d.*")) {
+            String board = hardware.split("msm")[1].trim().replaceAll("[^0-9]+", "");
+            return "msm" + board;
         } else if (hardware.matches("mt\\d*.")) {
             return "mt" + hardware.split("mt")[1].trim();
         }

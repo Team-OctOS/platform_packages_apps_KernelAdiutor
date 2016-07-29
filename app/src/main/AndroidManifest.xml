@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <uses-permission android:name="cyanogenmod.permission.PUBLISH_CUSTOM_TILE" />
 
     <application
@@ -18,9 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
 
-        <activity
-            android:name=".activities.MainActivity"
-            android:launchMode="singleInstance">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +37,10 @@
         <activity android:name=".activities.EditorActivity" />
         <activity android:name=".activities.FilePickerActivity" />
         <activity android:name=".activities.tools.DownloadsActivity" />
-        <activity android:name=".activities.tools.ProfileActivity" />
+        <activity android:name=".activities.tools.profile.ProfileActivity" />
+        <activity
+            android:name=".activities.SecurityActivity"
+            android:configChanges="locale|keyboard|keyboardHidden|orientation|screenSize|navigation" />
 
         <receiver android:name=".services.boot.Receiver">
             <intent-filter>
@@ -85,6 +87,22 @@
                 android:name="protocolVersion"
                 android:value="1" />
         </service>
+
+        <!-- Tasker -->
+        <activity android:name=".activities.tools.profile.ProfileTaskerActivity">
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".services.profile.Tasker"
+            android:process=":background">
+
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

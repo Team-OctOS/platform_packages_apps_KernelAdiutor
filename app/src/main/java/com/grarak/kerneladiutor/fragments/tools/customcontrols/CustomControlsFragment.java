@@ -39,7 +39,6 @@ import com.grarak.kerneladiutor.database.tools.customcontrols.ExportControl;
 import com.grarak.kerneladiutor.database.tools.customcontrols.ImportControl;
 import com.grarak.kerneladiutor.fragments.DescriptionFragment;
 import com.grarak.kerneladiutor.fragments.RecyclerViewFragment;
-import com.grarak.kerneladiutor.utils.Prefs;
 import com.grarak.kerneladiutor.utils.Utils;
 import com.grarak.kerneladiutor.utils.ViewUtils;
 import com.grarak.kerneladiutor.utils.tools.customcontrols.CustomControlException;
@@ -99,7 +98,7 @@ public class CustomControlsFragment extends RecyclerViewFragment {
                     case 1:
                         if (Utils.DONATED) {
                             Intent intent = new Intent(getActivity(), FilePickerActivity.class);
-                            intent.putExtra(FilePickerActivity.PATH_INTENT, "/");
+                            intent.putExtra(FilePickerActivity.PATH_INTENT, "/sdcard");
                             intent.putExtra(FilePickerActivity.EXTENSION_INTENT, ".json");
                             startActivityForResult(intent, 1);
                         } else {
@@ -122,7 +121,10 @@ public class CustomControlsFragment extends RecyclerViewFragment {
             }
         });
         if (!getActivity().isFinishing()) {
-            mOptionsDialog.show();
+            try {
+                mOptionsDialog.show();
+            } catch (NullPointerException ignored) {
+            }
         }
     }
 
@@ -235,7 +237,8 @@ public class CustomControlsFragment extends RecyclerViewFragment {
                     switchView.addOnSwitchListener(new SwitchView.OnSwitchListener() {
                         @Override
                         public void onChanged(SwitchView switchView, boolean isChecked) {
-                            Values.run(item.getApply(), item.getUniqueId(), getActivity(), isChecked ? "1" : "0");
+                            Values.run(item.getApply(), item, isChecked ? "1" : "0");
+                            mControlsProvider.commit();
                         }
                     });
 
@@ -253,7 +256,8 @@ public class CustomControlsFragment extends RecyclerViewFragment {
                     seekBarView.setOnSeekBarListener(new SeekBarView.OnSeekBarListener() {
                         @Override
                         public void onStop(SeekBarView seekBarView, int position, String value) {
-                            Values.run(item.getApply(), item.getUniqueId(), getActivity(), String.valueOf(position));
+                            Values.run(item.getApply(), item, String.valueOf(position));
+                            mControlsProvider.commit();
                         }
 
                         @Override
@@ -276,8 +280,9 @@ public class CustomControlsFragment extends RecyclerViewFragment {
                     genericSelectView.setOnGenericValueListener(new GenericSelectView.OnGenericValueListener() {
                         @Override
                         public void onGenericValueSelected(GenericSelectView genericSelectView, String value) {
-                            Values.run(item.getApply(), item.getUniqueId(), getActivity(), value);
+                            Values.run(item.getApply(), item, value);
                             genericSelectView.setValue(value);
+                            mControlsProvider.commit();
                         }
                     });
 
@@ -298,13 +303,12 @@ public class CustomControlsFragment extends RecyclerViewFragment {
         CardView cardView = new CardView(getActivity());
         cardView.setOnMenuListener(new CardView.OnMenuListener() {
 
-
             @Override
             public void onMenuReady(CardView cardView, PopupMenu popupMenu) {
                 Menu menu = popupMenu.getMenu();
                 menu.add(Menu.NONE, 0, Menu.NONE, getString(R.string.edit));
                 final MenuItem onBoot = menu.add(Menu.NONE, 1, Menu.NONE, getString(R.string.on_boot)).setCheckable(true);
-                onBoot.setChecked(Prefs.getBoolean(controlItem.getUniqueId() + "_onboot", false, getActivity()));
+                onBoot.setChecked(controlItem.isOnBootEnabled());
                 menu.add(Menu.NONE, 2, Menu.NONE, getString(R.string.export));
                 menu.add(Menu.NONE, 3, Menu.NONE, getString(R.string.delete));
 
@@ -317,8 +321,8 @@ public class CustomControlsFragment extends RecyclerViewFragment {
                                 break;
                             case 1:
                                 onBoot.setChecked(!onBoot.isChecked());
-                                Prefs.saveBoolean(controlItem.getUniqueId() + "_onboot", onBoot.isChecked(),
-                                        getActivity());
+                                controlItem.enableOnBoot(onBoot.isChecked());
+                                mControlsProvider.commit();
                                 break;
                             case 2:
                                 mExportItem = controlItem;
@@ -359,8 +363,6 @@ public class CustomControlsFragment extends RecyclerViewFragment {
                 mControlsProvider.delete(i);
             }
         }
-        Prefs.remove(uniqueId + "_onboot", getActivity());
-        Prefs.remove(uniqueId + "_onboot_args", getActivity());
         reload();
     }
 
