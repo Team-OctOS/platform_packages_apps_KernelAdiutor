@@ -64,7 +64,8 @@ public class FilePickerActivity extends BaseActivity {
         mPath = getIntent().getStringExtra(PATH_INTENT);
         mExtension = getIntent().getStringExtra(EXTENSION_INTENT);
 
-        if (!Utils.existFile(mPath)) {
+        RootFile path = new RootFile(mPath);
+        if (!path.exists() || !path.isDirectory()) {
             mPath = "/";
         }
 
