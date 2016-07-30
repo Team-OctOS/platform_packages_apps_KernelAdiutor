@@ -28,6 +28,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 
 import com.grarak.kerneladiutor.R;
@@ -143,7 +144,10 @@ public class FilePickerActivity extends BaseActivity {
                 mPickDialog.show();
             }
 
-            ((FilePickerActivity) getActivity()).getSupportActionBar().setTitle(mPath);
+            ActionBar actionBar;
+            if ((actionBar = ((FilePickerActivity) getActivity()).getSupportActionBar()) != null) {
+                actionBar.setTitle(mPath);
+            }
         }
 
         @Override
@@ -154,7 +158,10 @@ public class FilePickerActivity extends BaseActivity {
         @Override
         protected void postInit() {
             super.postInit();
-            ((FilePickerActivity) getActivity()).getSupportActionBar().setTitle(mPath);
+            ActionBar actionBar;
+            if ((actionBar = ((FilePickerActivity) getActivity()).getSupportActionBar()) != null) {
+                actionBar.setTitle(mPath);
+            }
         }
 
         private void reload() {
@@ -184,7 +191,11 @@ public class FilePickerActivity extends BaseActivity {
                         hideProgress();
                         mLoadAsyncTask = null;
 
-                        ((FilePickerActivity) getActivity()).getSupportActionBar().setTitle(mPath);
+                        ActionBar actionBar;
+                        if ((actionBar = ((FilePickerActivity) getActivity())
+                                .getSupportActionBar()) != null) {
+                            actionBar.setTitle(mPath);
+                        }
                     }
                 };
                 mLoadAsyncTask.execute();

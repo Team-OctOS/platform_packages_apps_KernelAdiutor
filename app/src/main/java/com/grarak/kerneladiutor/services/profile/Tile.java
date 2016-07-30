@@ -65,7 +65,7 @@ public class Tile extends BroadcastReceiver {
         if (profiles == null || profiles.size() < 1 || !Prefs.getBoolean("profiletile", true, context)) {
             try {
                 CMStatusBarManager.getInstance(context).removeTile(0);
-            } catch (SecurityException ignored) {
+            } catch (RuntimeException ignored) {
             }
             return;
         }
