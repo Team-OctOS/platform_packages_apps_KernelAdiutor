@@ -21,50 +21,98 @@
   <string name="pirated">Het lijkt erop dat de donatie app niet via de Play Store is aangeschaft! Als u het illegaal gedownload hebt, schaam u dan!</string>
   <string name="donate">Doneer</string>
   <string name="donate_summary">Deze functie is alleen beschikbaar wanneer de donatie-app geïnstalleerd is! Maar maak je geen zorgen hoor. Omdat deze app opensource is kunt u hem gemakkelijk zelf bouwen en deze controle verwijderen. Maar ik hoop dat u ontwikkelaars toch ondersteund. Bedankt voor het gebruik van Kernel Adiutor! Zodra u de donatie app hebt gekocht moet u Kernel Adiutor opnieuw opstarten zodat alle functies beschikbaar worden.</string>
+  <string name="donate_nope">Ik zal niet vallen voor deze scam!</string>
+  <string name="donate_yes">Ik hou van deze app. Ik wil doneren!</string>
   <string name="apply_on_boot">Toepassen bij opstarten</string>
+  <string name="apply_on_boot_text">Instellingen toepassen in %d seconden.</string>
+  <string name="apply_on_boot_complete">Toepassen instellingen voltooid.</string>
+  <string name="apply_on_boot_canceled">Toepassen instellingen geannuleerd.</string>
+  <string name="not_in_range">Niet binnen bereik</string>
   <!-- Permissions Denied -->
+  <string name="permission_denied_write_storage">Toestemming geweigerd voor het schrijven naar opslagruimte!</string>
   <!-- Editor -->
   <string name="save">Opslaan</string>
   <!-- File Picker -->
+  <string name="select_question">Selecteer %s?</string>
+  <string name="wrong_extension">Selecteer een bestand met de extensie %s.</string>
   <!-- Units -->
   <string name="mhz">MHz</string>
+  <string name="celsius">ºC</string>
+  <string name="fahrenheit">°F</string>
   <string name="mb">MB</string>
   <string name="ms">ms</string>
   <string name="mv">mV</string>
   <string name="min">min</string>
+  <string name="mah">mAh</string>
   <string name="ma">mA</string>
   <string name="kb">kB</string>
   <!-- Special signs -->
   <!-- Headers -->
+  <string name="statistics">Statistieken</string>
   <string name="kernel">Kernel</string>
   <string name="tools">Gereedschappen</string>
   <string name="other">Overige</string>
   <!-- Menus -->
+  <string name="overall">Algemeen</string>
+  <string name="device">Apparaat</string>
+  <string name="inputs">Invoer</string>
   <string name="cpu">CPU</string>
   <string name="cpu_voltage">CPU Voltage</string>
   <string name="cpu_hotplug">CPU Hotplug</string>
   <string name="thermal">Warmte</string>
   <string name="gpu">GPU</string>
   <string name="screen">Scherm</string>
+  <string name="wake">Ontwaken</string>
   <string name="sound">Geluid</string>
   <string name="battery">Batterij</string>
   <string name="io_scheduler">I/O-Regelaar</string>
   <string name="ksm">Kernel Samepage Samenvoegen</string>
+  <string name="lmk">Onvoldoende geheugen Killer</string>
   <string name="virtual_memory">Virtueel Geheugen</string>
   <string name="entropy">Entropie</string>
+  <string name="misc">Overige</string>
+  <string name="custom_controls">Aangepaste besturingsmethoden</string>
   <string name="downloads">Downloads</string>
   <string name="backup">Back-up</string>
   <string name="build_prop_editor">Build.prop Bewerker</string>
   <string name="profile">Profiel</string>
   <string name="recovery">Herstel</string>
   <string name="initd">Init.d</string>
+  <string name="about">Over</string>
+  <string name="contributors">Medewerkers</string>
+  <string name="faq">Veelgestelde Vragen</string>
   <string name="settings">Instellingen</string>
   <!-- Overall -->
   <string name="offline">Offline</string>
   <string name="core">Kern %d</string>
+  <string name="temperature">Temperatuur</string>
+  <string name="frequencies">Frequenties</string>
+  <string name="refresh">Verversen</string>
+  <string name="reset">Reset</string>
+  <string name="restore">Herstellen</string>
+  <string name="deep_sleep">Diepe Slaap</string>
   <string name="uptime">Bedrijfstijd</string>
+  <string name="error_frequencies">Fout bij het laden van frequenties</string>
+  <string name="unused_frequencies">Ongebruikte Frequenties</string>
   <!-- Device -->
+  <string name="processor">Processor</string>
+  <string name="vendor">Aanbieder</string>
+  <string name="features">Functies</string>
+  <string name="ram">RAM</string>
+  <string name="android_version">Android Versie</string>
+  <string name="android_api_level">Android SDK</string>
+  <string name="android_codename">Android Codenaam</string>
+  <string name="fingerprint">Vingerafdruk</string>
+  <string name="build_display_id">Build scherm ID</string>
+  <string name="baseband">Baseband</string>
+  <string name="rom">ROM</string>
+  <string name="bootloader">Bootloader</string>
+  <string name="hardware">Hardware</string>
+  <string name="architecture">Architectuur</string>
   <!-- Inputs -->
+  <string name="bus">Bus</string>
+  <string name="product">Product</string>
+  <string name="version">Versie</string>
   <!-- CPU -->
   <string name="cpu_max_freq">Maximale CPU Frequentie</string>
   <string name="cpu_max_freq_summary">Stel de maximale frequentie van de CPU in</string>

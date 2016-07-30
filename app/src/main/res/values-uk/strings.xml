@@ -373,6 +373,11 @@
   <!-- FAQ -->
   <!-- Settings -->
   <string name="dark_theme">Темна тема</string>
+  <string name="ten_sec">10 секунд</string>
+  <string name="twenty_sec">20 секунд</string>
+  <string name="fifty_sec">50 секунд</string>
+  <string name="nothing_apply">Нічого не знайдено для застосування!</string>
   <string name="debugging">Налагодження</string>
   <string name="logcat">Logcat</string>
+  <string name="security">Безпека</string>
 </resources>
