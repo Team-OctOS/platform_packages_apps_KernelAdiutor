@@ -352,10 +352,13 @@ public class CPUFragment extends RecyclerViewFragment {
     }
 
     private void cpuQuietInit(List<RecyclerViewItem> items) {
+        List<RecyclerViewItem> views = new ArrayList<>();
+        CardView cpuQuietCard = new CardView(getActivity());
+        cpuQuietCard.setTitle(getString(R.string.cpu_quiet));
+
         if (Misc.hasCpuQuietEnable()) {
             SwitchView cpuQuietEnable = new SwitchView();
-            cpuQuietEnable.setTitle(getString(R.string.cpu_quiet));
-            cpuQuietEnable.setSummary(getString(R.string.cpu_quiet_summary));
+            cpuQuietEnable.setSummary(getString(R.string.cpu_quiet));
             cpuQuietEnable.setChecked(Misc.isCpuQuietEnabled());
             cpuQuietEnable.addOnSwitchListener(new SwitchView.OnSwitchListener() {
                 @Override
@@ -364,7 +367,7 @@ public class CPUFragment extends RecyclerViewFragment {
                 }
             });
 
-            items.add(cpuQuietEnable);
+            views.add(cpuQuietCard);
         }
 
         if (Misc.hasCpuQuietGovernors()) {
@@ -379,7 +382,18 @@ public class CPUFragment extends RecyclerViewFragment {
                 }
             });
 
-            items.add(cpuQuietGovernors);
+            views.add(cpuQuietGovernors);
+        }
+
+        if (views.size() > 0) {
+            DescriptionView descriptionView = new DescriptionView();
+            descriptionView.setSummary(getString(R.string.cpu_quiet_summary));
+            cpuQuietCard.addItem(descriptionView);
+
+            for (RecyclerViewItem item : views) {
+                cpuQuietCard.addItem(item);
+            }
+            items.add(cpuQuietCard);
         }
     }
 
