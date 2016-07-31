@@ -559,6 +559,10 @@
     <string name="light">Light</string>
     <string name="medium">Medium</string>
     <string name="very_aggressive">Very Aggressive</string>
+    <string name="kill_lmk">Kill LMK</string>
+    <string name="kill_lmk_summary">Kill LMK when swap is in use.</string>
+    <string name="kill_lmk_threshold">Kill LMK Threshold</string>
+    <string name="kill_lmk_threshold_summary">How full swap needs to be to kill LMK.</string>
 
     <!-- Entropy -->
     <string name="available">Available</string>
