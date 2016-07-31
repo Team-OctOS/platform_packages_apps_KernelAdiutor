@@ -78,6 +78,7 @@
     <string name="wake">Wake</string>
     <string name="sound">Sound</string>
     <string name="battery">Battery</string>
+    <string name="led">LED</string>
     <string name="io_scheduler">I/O Scheduler</string>
     <string name="ksm">Kernel Samepage Merging</string>
     <string name="lmk">Low Memory Killer</string>
@@ -514,6 +515,14 @@
     <string name="charge_rate">Charge Rate</string>
     <string name="charging_current">Charging Current</string>
     <string name="charging_current_summary">Set charging current. Caution: Exceeding 1250mA may damage your charging driver.</string>
+
+    <!-- LED -->
+    <string name="fade">Fade</string>
+    <string name="fade_summary">Enable for fading, disable for blinking.</string>
+    <string name="intensity">Intensity</string>
+    <string name="speed">Speed</string>
+    <string name="stock">Stock</string>
+    <string name="continuous_light">Continuous light</string>
 
     <!-- I/O Scheduler -->
     <string name="internal_storage">Internal Storage</string>
