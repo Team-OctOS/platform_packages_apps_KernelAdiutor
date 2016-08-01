@@ -253,7 +253,7 @@ public class InitdFragment extends RecyclerViewFragment {
                     mProgressDialog.dismiss();
                 } catch (IllegalArgumentException ignored) {
                 }
-                if (!s.isEmpty()) {
+                if (s != null && !s.isEmpty()) {
                     mResultDialog = ViewUtils.dialogBuilder(s, null, null,
                             new DialogInterface.OnDismissListener() {
                                 @Override

@@ -19,6 +19,7 @@
  */
 package com.grarak.kerneladiutor.activities;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -191,8 +192,9 @@ public class FilePickerActivity extends BaseActivity {
                         hideProgress();
                         mLoadAsyncTask = null;
 
+                        Activity activity = getActivity();
                         ActionBar actionBar;
-                        if ((actionBar = ((FilePickerActivity) getActivity())
+                        if (activity != null && (actionBar = ((FilePickerActivity) activity)
                                 .getSupportActionBar()) != null) {
                             actionBar.setTitle(mPath);
                         }
