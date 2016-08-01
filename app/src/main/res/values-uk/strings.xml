@@ -212,7 +212,6 @@
   <!--Thermal-->
   <string name="thermal_info">Використовуйте тільки один термічний драйвер з наступних опцій, використання більше одного одночасно може спровокувати непередбаченні результати.</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Головний термічний драйвер Qualcomm, який попереджує процесор від перегрівання. Повинен бути виключений, якщо використовується альтернативне ядро.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Заміна стандартного контролю температур від Qualcomm. Розроблено faux123.</string>
   <string name="intellithermal_optimized">Intellithermal, оптимізована</string>
@@ -325,6 +324,7 @@
   <string name="slide_right">Зрушення вправо</string>
   <!-- Sound -->
   <!-- Battery -->
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Внутрішня пам’ять</string>
   <string name="external_storage">Зовнішній накопичувач</string>

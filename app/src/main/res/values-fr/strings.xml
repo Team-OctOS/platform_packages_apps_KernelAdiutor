@@ -195,7 +195,6 @@
   <!--Thermal-->
   <string name="thermal_info">N\'utilisez qu\'un seul des pilotes de gestion de température proposés ci-après, en utiliser plus d\'un en même temps peu entrainer des comportements inattendus.</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Driver thermique stock de Qualcomm pour prévoir la surchauffe de l\'appareil. Ça devra être désactivé si le kernel actuel a une alternative.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Un remplacement dans le noyau pour Thermald de Qualcomm. Développé par faux123.</string>
   <string name="intellithermal_optimized">Intellithermal optimisé</string>
@@ -339,6 +338,7 @@
   <string name="usb_fast_charge_summary">L\'appareil se chargera plus vite lorsqu\'il est connecté en USB. Rebranchez votre chargeur lorsque vous modifiez cette option.</string>
   <string name="blx">Prolongateur d\'autonomie</string>
   <string name="blx_summary">Défini une limite de capacité de charge de la batterie en entrant une valeur entre 0 et 100.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Stockage interne</string>
   <string name="external_storage">Stockage externe</string>

@@ -243,7 +243,6 @@
   <string name="warning">警告</string>
   <string name="thermal_info">只选取以下发热控制驱动中的一个使用，同时使用多个驱动可能会导致预料之外的行为。</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">高通默认的发热控制驱动，阻止设备出现过热现象。如果目前的内核有替代方案，请禁用它。</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">由 faux123 开发的高通 Thermald 替代方案。</string>
   <string name="intellithermal_optimized">Intellithermal 优化</string>
@@ -408,6 +407,7 @@
   <string name="blx">电池寿命延长器</string>
   <string name="blx_summary">设置电池充电时满电容量的上限（在 0–100 之间）。</string>
   <string name="charge_rate">充电速率</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">内部存储</string>
   <string name="external_storage">外部存储</string>

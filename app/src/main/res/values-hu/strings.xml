@@ -295,7 +295,6 @@
   <string name="warning">Figyelmeztetés</string>
   <string name="thermal_info">Csak egy termikus vezérlőt használj a következő lehetőségek közül, több egy időben való használata szokatlan viselkedést okozhat.</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Gyári Qualcomm termikus illesztőprogram, amely megakadályozza a készülék túlmelegedését. Ezt ki kell kapcsolni, ha az aktuális kernel alternatívával rendelkezik.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Egy kernelen belüli Qualcomm Thermald helyettesítő. Fejlesztő: faux123.</string>
   <string name="intellithermal_optimized">Optimalizált Intellithermal</string>
@@ -485,6 +484,7 @@
   <string name="charge_rate">Töltési arány</string>
   <string name="charging_current">Töltőáram</string>
   <string name="charging_current_summary">Állíts be egyéni akkumulátor töltési mértéket. Figyelmeztetés: az 1250 mA fölötti érték károsíthatja a töltés vezérlőjét.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Belső memória</string>
   <string name="external_storage">Külső tárhely</string>
@@ -695,6 +695,7 @@
   <string name="old_password_wrong">A régi jelszó helytelen</string>
   <string name="password_empty">Jelszó üres</string>
   <string name="password_not_match">Új jelszó nem egyezik a megerősítéssel</string>
+  <string name="password_too_long">Jelszó túl hosszú (max. 32 karakter)</string>
   <string name="set_password_first">Először állítsa be a jelszót</string>
   <string name="fingerprint_summary">Ujjlenyomat használata a biztonsági ellenőrzéshez. Ez addig fog működni, amíg az ujjlenyomata regisztrálva van.</string>
 </resources>

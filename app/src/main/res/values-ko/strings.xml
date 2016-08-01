@@ -199,7 +199,6 @@
   <string name="core_control">코어 제어</string>
   <!--Thermal-->
   <string name="thermal_info">다음 온도 드라이버 항목 중 하나만을 사용하세요. 둘 이상을 동시에 사용하면 오작동할 수 있습니다.</string>
-  <string name="thermald_summary">기기 과열을 방지하는 Stock Qualcomm 온도 드라이버입니다. 사용 중인 커널에 대안이 있다면 비활성화되어야 합니다.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">퀄컴의 Thermald를 대체합니다. faux123님이 개발했습니다.</string>
   <string name="intellithermal_optimized_summary">퀄컴의 Thermald를 대체합니다. faux123님과 alucard_24님이 개발했습니다.</string>
@@ -339,6 +338,7 @@
   <string name="usb_fast_charge_summary">USB에 연결했을 때 충전되는 속도가 빨라집니다. 이 설정을 변경하셨으면 충전기를 다시 연결해 주세요.</string>
   <string name="blx">배터리 사용시간 확장</string>
   <string name="blx_summary">0~100 사이에서 배터리가 충전될 때의 한계값을 설정합니다.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">내부 저장소</string>
   <string name="external_storage">외부 저장소</string>

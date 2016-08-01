@@ -20,11 +20,14 @@
   <string name="unknown">Неизвестно</string>
   <string name="pirated">Похоже, пожертвование app не был куплен через магазин Play! Если вы пиратские его, то как вам не стыдно!</string>
   <string name="donate">Пожертвовать</string>
+  <string name="donate_summary">Эта функция доступна, только когда установлено приложение пожертвования! Не волнуйтесь, потому что это приложение является открытым исходным кодом и можно легко собрать его самостоятельно без этой проверки. Но я надеюсь, что вы в любом случае поддержите разработчиков. Спасибо за использование Kernel Adiutor! После того как вы купили приложение пожертвования, вам нужно перезапустить Kernel Auditor для того, чтобы включить все функции.</string>
   <string name="apply_on_boot">Применять при загрузке</string>
   <string name="apply_on_boot_text">Применение настроек через %d секунд.</string>
   <string name="apply_on_boot_complete">Применение параметров завершено.</string>
   <string name="apply_on_boot_canceled">Применение настроек отменено.</string>
+  <string name="not_in_range">Не в диапазоне</string>
   <!-- Permissions Denied -->
+  <string name="permission_denied_write_storage">Нет доступ к записи на диск!</string>
   <!-- Editor -->
   <string name="save">Сохранить</string>
   <!-- File Picker -->
@@ -61,6 +64,7 @@
   <string name="battery">Батарея</string>
   <string name="io_scheduler">Планировщик I/O</string>
   <string name="ksm">Объединять страницы памяти ядра</string>
+  <string name="lmk">Очистка памяти</string>
   <string name="virtual_memory">Виртуальная память</string>
   <string name="entropy">Энтропия</string>
   <string name="misc">Разное</string>
@@ -79,11 +83,13 @@
   <string name="offline">Оффлайн</string>
   <string name="core">Ядро %d</string>
   <string name="temperature">Температура</string>
+  <string name="frequencies">Частоты</string>
   <string name="refresh">Обновить</string>
   <string name="reset">Сброс</string>
   <string name="restore">Восстановить</string>
   <string name="deep_sleep">Глубокий сон</string>
   <string name="uptime">Время работы</string>
+  <string name="error_frequencies">Не удалось загрузить частоты</string>
   <string name="unused_frequencies">Неиспользуемые частоты</string>
   <!-- Device -->
   <string name="processor">Процессор</string>
@@ -92,14 +98,18 @@
   <string name="ram">ОЗУ</string>
   <string name="android_version">Версия Android</string>
   <string name="android_api_level">Android SDK</string>
+  <string name="android_codename">Кодовое имя Андроид</string>
   <string name="fingerprint">Отпечаток пальца</string>
   <string name="build_display_id">Идентификатор сборки дисплея</string>
+  <string name="baseband">Модем</string>
   <string name="rom">Прошивка</string>
   <string name="bootloader">Загрузчик</string>
   <string name="architecture">Архитектура</string>
   <!-- Inputs -->
+  <string name="bus">Шина</string>
   <string name="product">Продукт</string>
   <string name="version">Версия</string>
+  <string name="handlers">Обработчики</string>
   <!-- CPU -->
   <string name="cores">%d ядер</string>
   <string name="cpu_max_freq">Максимальная частота процессора</string>
@@ -145,6 +155,7 @@
   <string name="override_vmin">Переопределить минимальное напряжение</string>
   <string name="override_vmin_summary">Отключить ограничения производителя на понижение напряжения</string>
   <!-- CPU Hotplug -->
+  <string name="hotplug_warning">Включено более одного hotplug\'a! \nПожалуйста используйте только один.</string>
   <string name="mpdecision">MPDecision</string>
   <string name="mpdecision_summary">Контроль переключения ядер от Qualcomm. Может вызвать проблемы со со сменой частот, если включен.</string>
   <string name="intelliplug">IntelliPlug</string>
@@ -163,6 +174,8 @@
   <string name="eco_mode_summary">Режим энегросбережения для IntelliPlug.</string>
   <string name="hysteresis">Значение гистерезиса</string>
   <string name="hysteresis_summary">Чем это ниже, тем быстрее отклик.</string>
+  <string name="cpu_threshold">Порог нагрузки</string>
+  <string name="cpu_threshold_summary">Чем выше, тем меньше используемых ядер.</string>
   <string name="suspend">Приостановить</string>
   <string name="suspend_summary">Предотвратить приостановить.</string>
   <string name="cpus_boosted">Количество ускоренных ядер ЦП</string>
@@ -171,6 +184,8 @@
   <string name="min_cpu_online_summary">Минимальное количество ядер процессора которые будут всегда включены </string>
   <string name="max_cpu_online">Максимальное количество работающих ядер</string>
   <string name="max_cpu_online_summary">Максимум CPU блоков которые могут работать одновременно.</string>
+  <string name="max_cpu_online_screen_off">Максимальное количество ядер при ВЫКЛ экране</string>
+  <string name="max_cpu_online_screen_off_summary">Максимальное кол-во включенных ядер CPU при выключенном экране.</string>
   <string name="suspend_defer_time">Время отсрочки задержки</string>
   <string name="defer_sampling">Отложенная выборка</string>
   <string name="boost_lock_duration">Повышение длительности блокировки</string>
@@ -181,6 +196,7 @@
   <string name="blu_plug">Blu_Plug</string>
   <string name="blu_plug_summary">Замена ядра для Qualcomm MPDecision. Разработанная командой Code_Blue.</string>
   <string name="powersaver_mode">Режим энергосбережения</string>
+  <string name="powersaver_mode_summary">Одноядерный режим с макс. частотой 1728 МГц.</string>
   <string name="up_threshold">Высший порог</string>
   <string name="up_threshold_summary">При превышении данного порога загрузки драйвер включит ещё одно ядро CPU.</string>
   <string name="up_timer_cnt">До элемента управления Timer</string>
@@ -203,6 +219,8 @@
   <string name="io_is_busy_summary">Используется для изготовления hotplug считают время ввода-вывода, как время загрузки процессора.</string>
   <string name="mako_hotplug">Мако Hotplug</string>
   <string name="mako_hotplug_summary">Замена ядра для Qualcomm MPDecision. Разработанный franciscofranco.</string>
+  <string name="cpus_on_touch">Ядра при касании</string>
+  <string name="cpus_on_touch_summary">Количество задействованных ядер процессора при прикосновении к экрану или нажатии кнопок.</string>
   <string name="cpu_freq_unplug_limit">Частота процессора отключите ограничение</string>
   <string name="first_level">Первый уровень</string>
   <string name="first_level_summary">Порог загрузки для включения всех CPU.</string>
@@ -216,9 +234,11 @@
   <string name="bricked_hotplug">Отладка кирпича</string>
   <string name="mb_hotplug_summary">Замена Qualcomms MPDecision.
 Разработано </string>
+  <string name="screen_off_single_cpu">Одно ядро при выключенном экране</string>
   <string name="idle_frequency">Частота холостого хода</string>
   <string name="idle_frequency_summary">Если это первое ядро ниже этой частоты, то не включать остальные ядра.</string>
   <string name="touch_boost_time">Время ускорения процессора при касании</string>
+  <string name="touch_boost_time_summary">Время повышенной частоты процессора после касания экрана.</string>
   <string name="boost_frequency_core">Повысить частоту ядра %d</string>
   <string name="start_delay">Задержка перед запуском</string>
   <string name="start_delay_summary">Время до работы контроля ядра.</string>
@@ -231,7 +251,9 @@
   <string name="sampling_rate">Частота дискретизации</string>
   <string name="cpu_down_rate">Уменьшить Скорость процессора.</string>
   <string name="cpu_up_rate">Увеличить Скорость процессора.</string>
+  <string name="thunderplug">ThunderPlug</string>
   <string name="thunderplug_summary">Замена ядра для Qualcomm hotplugging. Разработанный varunchitre15.</string>
+  <string name="min_cpu_online_screen_off">Минимальное количество ядер при ВЫКЛ экране</string>
   <string name="endurance_level">Уровень стойкости</string>
   <string name="endurance_level_summary">Энергосберегающий профиль.</string>
   <string name="quad_core_mode">Четырёх-ядерный режим</string>
@@ -251,12 +273,12 @@
   <string name="cycle_up">Цикл вверх</string>
   <string name="cycle_up_summary">Циклы ожидания после последнего события hotplug подключить другое ядро.</string>
   <string name="core_control">Управление ядром</string>
+  <string name="core_control_summary">Hotplug от Qualcomm. Извините, нельзя отключить его. #blameqcom</string>
   <string name="offline_delay_summary">Время до отключения процессора.</string>
   <!--Thermal-->
   <string name="warning">Внимание</string>
   <string name="thermal_info">Используйте только один драйвер из представленных вариантов, использование более одного за раз может привести к непредсказуемым последствиям.</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Стоковый термальный драйвер, который предотвращает перегрев. Должен быть отключен, если ядро имеет альтернативу.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Замена стандартного контроля температур от Qualcomm. Разработано faux123.</string>
   <string name="intellithermal_optimized">Intellithermal оптимизация</string>
@@ -264,6 +286,8 @@
   <string name="vdd_restriction">VDD ограничение</string>
   <string name="freq_throttle_temp">Троттлинг частоты при температуре</string>
   <string name="freq_throttle_temp_summary">Температура начала троттлинга частоты.</string>
+  <string name="cpu_throttle_temp">Температура троттлинга ядра</string>
+  <string name="cpu_throttle_temp_summary">Температура отключения процессора.</string>
   <string name="freq_step">Шаг частоты</string>
   <string name="immediately_limit_stop">Сразу же ограничить</string>
   <string name="poll">Опрос</string>
@@ -383,6 +407,7 @@
   <string name="half">Половина</string>
   <string name="s2w">Жест для пробуждения</string>
   <string name="s2w_summary">Пробуждение свайпом по экрану.</string>
+  <string name="s2w_s2s">Sweep2Wake + Sweep2Sleep</string>
   <string name="s2s">Sweep2Sleep</string>
   <string name="s2w_right">Сдвинуть вправо, чтобы разблокировать</string>
   <string name="s2w_left">Сдвинуть влево, чтобы разблокировать</string>
@@ -397,7 +422,9 @@
   <string name="dt2s_summary">Блокируйте устройство двойным касанием в верхней части экрана.</string>
   <string name="s2w_charging">Sweep2Wake во время зарядки</string>
   <string name="dt2w_charging">Пробуждение по дв. тапу во время зарядки</string>
+  <string name="dt2w_s2w">DoubleTap2Wake + Sweep2Wake</string>
   <string name="dt2w_s2w_charging">DoubleTap2Wake + Sweep2Wake во время зарядки</string>
+  <string name="s2s_summary">Отключение экрана свайпом.</string>
   <string name="s2s_right">Сдвинуть вправо</string>
   <string name="s2s_left">Сдвинуть влево</string>
   <string name="s2s_any">Сдвинуть влево или вправо</string>
@@ -435,6 +462,8 @@
   <string name="blx">Максимальный порог заряда</string>
   <string name="blx_summary">Установите максимальный уровень заряда батареи, установив значение от 0 до 100.</string>
   <string name="charge_rate">Скорость заряда</string>
+  <string name="charging_current">Зарядный ток</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Внутренняя память</string>
   <string name="external_storage">Внешняя память</string>
@@ -450,6 +479,7 @@
   <string name="pages_sharing">Страницы обмена</string>
   <string name="ksm_summary">Уменьшает потребление памяти, но увеличивает загрузку CPU.</string>
   <string name="pages_to_scan">Страницы для сканирования</string>
+  <string name="sleep_milliseconds">Период между сканированием в миллисекундах</string>
   <string name="deferred_timer">Отложенный таймер</string>
   <string name="deferred_timer_summary">Уменьшает нагрузку на CPU, но экономит меньше памяти.</string>
   <!-- Low Memory Killer -->
@@ -523,13 +553,16 @@
   <string name="test">Проверка настроек</string>
   <string name="output">Вывод</string>
   <string name="edit">Редактировать</string>
+  <string name="on_boot">При загрузке</string>
   <string name="export">Экспорт</string>
   <string name="delete">Удалить</string>
   <string name="sure_question">Вы уверены?</string>
   <string name="name">Название</string>
+  <string name="name_empty">Пустое имя!</string>
   <!-- Downloads -->
   <string name="downloading_counting">Подсчёт загрузки</string>
   <string name="check_md5">Проверка md5</string>
+  <string name="install">Установить</string>
   <string name="cwm_recovery">CWM рекавери</string>
   <string name="twrp">TWRP</string>
   <string name="manual_flashing">Я буду использовать мои руки</string>
@@ -539,6 +572,7 @@
   <string name="restoring">Восстановление в процессе</string>
   <!-- Backup -->
   <string name="boot_partition">Загрузочный раздел</string>
+  <string name="flash">Прошить</string>
   <!-- Build prop Editor -->
   <string name="search">Поиск</string>
   <string name="key">Ключ</string>
@@ -578,6 +612,7 @@
   <string name="dark_theme">Тёмная тема</string>
   <string name="fahrenheit_title">По Фаренгейту</string>
   <string name="fahrenheit_summary">Используйте для измерения температуры по Фаренгейту.</string>
+  <string name="force_english">Принудительный английский</string>
   <string name="ten_sec">10 секунд</string>
   <string name="twenty_sec">20 секунд</string>
   <string name="fifty_sec">50 секунд</string>

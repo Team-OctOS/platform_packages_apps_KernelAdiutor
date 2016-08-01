@@ -200,7 +200,6 @@
   <!--Thermal-->
   <string name="thermal_info">在下面選項中只使用一種溫度管理，同時使用超過一種可能會導致不可預期的行為。</string>
   <string name="thermald">原廠溫度管裡</string>
-  <string name="thermald_summary">原生高通溫度管理避免裝置過熱。在核心有其它選項時應該停用。</string>
   <string name="intellithermal_summary">將高通的溫度管裡更換為由 faux123 開發的內核</string>
   <string name="intellithermal_optimized_summary">將高通的溫度管裡更換為由 faux123 與 alucard_24 開發的內核</string>
   <string name="vdd_restriction">VDD限制</string>
@@ -319,6 +318,7 @@
   <string name="usb_fast_charge">USB 快速充電</string>
   <string name="usb_fast_charge_summary">當裝置連接 USB 時充電速度會較快。變更選項時請重新插入充電器。</string>
   <string name="blx">電池壽命擴展</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">內部儲存空間</string>
   <string name="external_storage">外部儲存空間</string>

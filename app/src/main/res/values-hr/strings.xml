@@ -9,6 +9,8 @@
   <string name="no_root">Nema roota</string>
   <string name="no_busybox">Nema busyboxa</string>
   <!-- Security -->
+  <string name="password">Lozinka</string>
+  <string name="password_wrong">Lozinka je pogrešna</string>
   <string name="select_picture">Odaberite sliku</string>
   <string name="no_picture">Nema slike</string>
   <string name="went_wrong">Nešto je pošlo po zlu!</string>
@@ -47,7 +49,7 @@
   <!-- Headers -->
   <string name="statistics">Statistika</string>
   <string name="kernel">Kernel</string>
-  <string name="tools">Alatke</string>
+  <string name="tools">Alati</string>
   <string name="other">Ostalo</string>
   <!-- Menus -->
   <string name="overall">Opće informacije</string>
@@ -73,14 +75,14 @@
   <string name="backup">Sigurnosna kopija</string>
   <string name="build_prop_editor">Uređivač build.prop-a</string>
   <string name="profile">Profil</string>
-  <string name="recovery">Recovery</string>
+  <string name="recovery">Oporavak</string>
   <string name="initd">Init.d</string>
   <string name="about">O aplikaciji</string>
   <string name="contributors">Suradnici</string>
   <string name="faq">Česta pitanja i odgovori</string>
   <string name="settings">Postavke</string>
   <!-- Overall -->
-  <string name="offline">Offline</string>
+  <string name="offline">Neaktivna</string>
   <string name="core">Jezgra %d</string>
   <string name="temperature">Temperatura</string>
   <string name="frequencies">Frekvencije</string>
@@ -112,19 +114,19 @@
   <string name="handlers">Rukovatelji</string>
   <!-- CPU -->
   <string name="cores">Jezgre: %d</string>
-  <string name="cpu_max_freq">CPU, najviša frekvencija</string>
-  <string name="cpu_max_freq_summary">Postavi za CPU najvišu frekvenciju koja se može ostvariti.</string>
-  <string name="cpu_min_freq">CPU, najniža frekvencija</string>
-  <string name="cpu_min_freq_summary">Postavi za CPU najnižu frekvenciju do koje se može spustiti.</string>
-  <string name="cpu_max_screen_off_freq">Najviša CPU frekvencija pri isključenom zaslonu</string>
+  <string name="cpu_max_freq">Najviša frekvencija CPU-a</string>
+  <string name="cpu_max_freq_summary">Postavite najvišu frekvenciju koju CPU može ostvariti.</string>
+  <string name="cpu_min_freq">Najniža frekvencija CPU-a</string>
+  <string name="cpu_min_freq_summary">Postavite najnižu frekvenciju do koje se CPU može spustiti.</string>
+  <string name="cpu_max_screen_off_freq">Najviša frekvencija CPU-a pri isključenom zaslonu</string>
   <string name="cpu_max_screen_off_freq_summary">Postavi najvišu frekvenciju koju će CPU doseći pri isključenom zaslonu.</string>
-  <string name="cpu_governor">CPU Governor</string>
-  <string name="cpu_governor_summary">CPU Governor odlučuje kako će se procesor i jezgre ponašati pod opterećenjem. Izmjena Governora utjecat će na način kako procesor koristi radne frekvencije.</string>
-  <string name="cpu_governor_tunables">Postavke CPU Governora</string>
+  <string name="cpu_governor">Governor CPU-a</string>
+  <string name="cpu_governor_summary">Governor CPU-a određuje kako će se procesor ponašati pod promjenama opterećenja. Promjena governora utjecat će na način na koji se procesor mijenja kroz korake frekvencije koji su dostupni za vaš CPU.</string>
+  <string name="cpu_governor_tunables">Postavke governora CPU-a</string>
   <string name="cpu_governor_tunables_summary">Razne konfiguracijske vrijednosti koje ovise o Governoru.</string>
   <string name="tunables_error">%s ne može se mijenjati.</string>
   <string name="mc_power_saving">Višejezgrena štednja energije</string>
-  <string name="mc_power_saving_summary">Koristi što manje jezgri pri obavljanju zadataka.</string>
+  <string name="mc_power_saving_summary">Pokušava grupirati zadatke u što je manje jezgri moguće.</string>
   <string name="disabled">Onemogućeno</string>
   <string name="enabled">Omogućeno</string>
   <string name="aggressive">Agresivno</string>
@@ -155,7 +157,7 @@
   <string name="override_vmin_summary">Iskljuci za uklanjanje ograničenja proizvođača na undervolting</string>
   <!-- CPU Hotplug -->
   <string name="mpdecision">MPDecision</string>
-  <string name="mpdecision_summary">Qualcomm\'s hotplugging solution.  Ako ovo aktivirate mogli biste se suočiti s teškoćama pri mijenjanju frekvencija.</string>
+  <string name="mpdecision_summary">Qualcommovo rješenje za hotplugging. Ako ovo omogućite mogli biste se suočiti s teškoćama pri mijenjanju frekvencija.</string>
   <string name="intelliplug">IntelliPlug</string>
   <string name="intelliplug_summary">Zamjena unutar kernela za Qualcomm\'s MPDecision. Programirao: faux123.</string>
   <string name="insanity">InSaNiTy</string>
@@ -215,7 +217,7 @@
   <string name="mako_hotplug_summary">Zamjena za Qualcomms MPDecision unutar kernela. Programirao: franciscofranco.</string>
   <string name="cpus_on_touch">CPU-i na dodir</string>
   <string name="cpu_freq_unplug_limit">Granična frekvencija iskopčavanja CPU-a</string>
-  <string name="first_level">Prva Razina</string>
+  <string name="first_level">Prva razina</string>
   <string name="first_level_summary">Granica za uključivanje svih CPU jezgri.</string>
   <string name="high_load_counter">Brojač Visokog Opterećenja</string>
   <string name="load_threshold">Razina opterećenja</string>
@@ -240,7 +242,7 @@
   <string name="sampling_rate">Brzina uzorkovanja</string>
   <string name="cpu_down_rate">Učestalost isključivanja CPU-a</string>
   <string name="cpu_up_rate">Učestalost aktiviranja CPU-a</string>
-  <string name="endurance_level">Razina izdržljivost</string>
+  <string name="endurance_level">Razina izdržljivosti</string>
   <string name="endurance_level_summary">Profil za uštedu energije.</string>
   <string name="quad_core_mode">4-jezgreni način</string>
   <string name="dual_core_mode">2-jezgreni način</string>
@@ -252,10 +254,10 @@
   <string name="autosmp">AutoSMP</string>
   <string name="autosmp_summary">Zamjena unutar kernela za Qualcomov MPDecision. Programirao: mrg666.</string>
   <string name="core_control">Kontrola jezgri</string>
+  <string name="core_control_summary">Qualcommovo rješenje za hotplugging. Žao nam je ako ovo ne možete isključiti. #kriviteqcom</string>
   <!--Thermal-->
   <string name="thermal_info">Preporučamo da koristite samo jedan driver. Korištenjem više od jednog istovremeno može utjecati na neuobičajeno ponašanje, osim ako ih vaš kernel već koristi više po defaultu.</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Originalni Qualcommov toplinski upravljački program koji sprječava pregrijavanje uređaja. Ovo bi trebao biti isključeno ako trenutni kernel ima alternativu.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Zamjena unutar kernela za Qualcomov Mpdecision. Programirao: faux123.</string>
   <string name="intellithermal_optimized">Intellithermal Optimiziran</string>
@@ -265,15 +267,17 @@
   <string name="temp_limit">Toplotna granica</string>
   <string name="temp_limit_summary">Ako se temperatura još više podigne, usporiti će se frekvencija CPU-a da se temperatura snizi.</string>
   <!-- GPU -->
-  <string name="gpu_2d_max_freq">GPU 2D najviša frekvencija</string>
+  <string name="gpu_freq">Frekvencija GPU-a</string>
+  <string name="gpu_2d_max_freq">Najviša frekvencija GPU-a 2D</string>
   <string name="gpu_2d_max_freq_summary">Postavi najvišu moguću 2D frekvenciju za GPU do koje se može uzdići.</string>
-  <string name="gpu_max_freq">GPU, najviša frekvencija</string>
-  <string name="gpu_max_freq_summary">Postavi najvišu moguću GPU frekvenciju do koje se može uzdići.</string>
+  <string name="gpu_max_freq">Najviša frekvencija GPU-a</string>
+  <string name="gpu_max_freq_summary">Postavite najvišu frekvenciju koju GPU može ostvariti.</string>
   <string name="gpu_min_freq">Najniža frekvencija GPU-a</string>
+  <string name="gpu_min_freq_summary">Postavite najnižu frekvenciju do koje se GPU može spustiti.</string>
   <string name="gpu_2d_governor">GPU 2D Governor</string>
   <string name="gpu_2d_governor_summary">Postavi 2D Governor za GPU.</string>
-  <string name="gpu_governor">GPU Governor</string>
-  <string name="gpu_governor_summary">Postavi Governor za GPU.</string>
+  <string name="gpu_governor">Governor GPU-a</string>
+  <string name="gpu_governor_summary">Postavite governor GPU-a.</string>
   <string name="simple_gpu_algorithm">Jednostavan algoritam  GPU-a</string>
   <string name="simple_gpu_algorithm_summary">Add-on za MSM Adreno TZ GPU Governor. Programirao faux123.</string>
   <string name="laziness">Lijenost</string>
@@ -281,16 +285,17 @@
   <string name="ramp_thresold">Granice Ograničenja</string>
   <string name="ramp_thresold_summary">Ovo povećava broj puta koliko će GPU Governor suzbiti zahtjeve. Čim viša vrijednost, tim moćnija izvedba.</string>
   <!-- Screen -->
+  <string name="screen_color">Boja zaslona</string>
   <string name="red">Crvena</string>
   <string name="green">Zelena</string>
   <string name="blue">Plava</string>
   <string name="min_rgb">Minimalna RGB vrijednost</string>
-  <string name="invert_screen">Obrnuti prikaz boja</string>
+  <string name="invert_screen">Inverzija zaslona</string>
   <string name="saturation_intensity">Zasićenost boja</string>
   <string name="grayscale_mode">Modus sivih tonova</string>
-  <string name="screen_hue">Hue</string>
-  <string name="screen_hue_summary">Postavljanje visoke vrijednosti za MSM8x26 SoC može Vam prouzročiti probleme.</string>
-  <string name="screen_value">Vrijednosti Zaslona</string>
+  <string name="screen_hue">Nijansa zaslona</string>
+  <string name="screen_hue_summary">Postavljanje visoke vrijednosti za MSM8x26 SoC može uzrokovati probleme.</string>
+  <string name="screen_value">Vrijednost zaslona</string>
   <string name="screen_contrast">Kontrast zaslona</string>
   <string name="gamma">Gama</string>
   <string name="contrast">Kontrast</string>
@@ -304,8 +309,8 @@
   <string name="negative_toggle">Negativni prekidač</string>
   <string name="glove_mode">Način rada s rukavicama</string>
   <!-- Wake -->
-  <string name="dt2w">Dvaput-Dirni-Pa-Probudi</string>
-  <string name="dt2w_summary">Probudite uređaj dvostrukim dodirom ekrana.</string>
+  <string name="dt2w">Dvostruki dodir za buđenje</string>
+  <string name="dt2w_summary">Probudite uređaj dvostrukim dodirom zaslona.</string>
   <string name="center">Sredina</string>
   <string name="full">Potpuno</string>
   <string name="bottom_half">Donja polovica</string>
@@ -318,6 +323,8 @@
   <string name="draw_o">Nacrtajte O</string>
   <string name="draw_w">Nacrtajte W</string>
   <string name="draw_c">Nacrtajte C</string>
+  <string name="camera_gesture">Pokret za fotoaparat</string>
+  <string name="camera_gesture_summary">Pokrenite zadanu aplikaciju fotoaparata crtanjem kruga na zaslonu.</string>
   <string name="power_key_suspend">Obustavljanje tipke za uključivanje</string>
   <string name="power_key_suspend_summary">Izbor ove opcije će onemogućiti buđenje dodirom zaslona ukoliko je zaslon isključen pritiskom na tipku za paljenje uređaja.</string>
   <!-- Sound -->
@@ -328,10 +335,14 @@
   <string name="speaker_gain">Glasnoća zvučnika</string>
   <string name="headphone_poweramp_gain">Glasnoća pojačala za slušalice</string>
   <!-- Battery -->
+  <string name="level">Razina</string>
+  <string name="voltage">Napon</string>
+  <string name="capacity">Kapacitet</string>
   <string name="usb_fast_charge">Brzo punjenje preko USB-a</string>
   <string name="usb_fast_charge_summary">Baterija će se puniti brže pri spoju preko USB-a. Odvojite punjač ako mijenjate ovu vrijednost.</string>
   <string name="blx">Produživač života baterije</string>
   <string name="blx_summary">Odredite granicu do koje će se baterija napuniti postavkom veličine između 0 i 100.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Unutarnja pohrana</string>
   <string name="external_storage">Vanjska pohrana</string>
@@ -354,6 +365,9 @@
   <string name="medium">Srednje</string>
   <string name="very_aggressive">Vrlo agresivno</string>
   <!-- Entropy -->
+  <string name="available">Dostupno</string>
+  <string name="read">Čitanje</string>
+  <string name="write">Pisanje</string>
   <!-- Misc -->
   <string name="vibration_strength">Snaga vibracije</string>
   <string name="android_logger">Android: zapisi</string>
@@ -369,6 +383,12 @@
   <string name="msm_hsic_host_wakelock">msm_hsic_host Wakelock</string>
   <string name="msm_hsic_host_wakelock_summary">Spriječiti msm_hsic_host buđenje uređaja.</string>
   <!-- Custom Controls -->
+  <string name="welcome">Dobro došli</string>
+  <string name="custom_controls_summary">U ovom odjeljku možete stvoriti ili uvesti prilagođene kontrole koje (još) ne postoje u aplikaciji.</string>
+  <string name="example">Primjeri</string>
+  <string name="custom_controls_example_summary">Trebate primjer? Dodirnite &lt;a href=\"https://github.com/Grarak/KernelAdiutor/wiki/Custom-Controls\"&gt;ovdje&lt;a&gt;.</string>
+  <string name="create">Stvori</string>
+  <string name="import_item">Uvezi</string>
   <string name="test">Testiranje</string>
   <string name="edit">Promjeni</string>
   <string name="delete">Izbriši</string>
@@ -381,7 +401,7 @@
   <string name="flashing">Instaliranje</string>
   <!-- Backup -->
   <!-- Build prop Editor -->
-  <string name="search">Tražiti</string>
+  <string name="search">Pretraživanje</string>
   <string name="key">Ključ</string>
   <string name="value">Vrijednost</string>
   <!-- Profile -->

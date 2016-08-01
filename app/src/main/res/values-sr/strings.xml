@@ -175,6 +175,7 @@
   <string name="sound_control">Контрола звука</string>
   <!-- Battery -->
   <string name="usb_fast_charge">УСБ брзо пуњење</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Унутрашње складиште</string>
   <string name="external_storage">Спољашње складиште</string>

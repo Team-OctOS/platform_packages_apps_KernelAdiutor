@@ -202,7 +202,6 @@
   <!--Thermal-->
   <string name="thermal_info">Gunakan salah satu driver termal dari pilihan berikut, menggunakan lebih pada saat yang sama dapat menyebabkan perilaku yang tidak terduga.</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Termal driver bawaan Quallcomm yang mencegah perangkat kepanasan. Ini harus dinonaktifkan jika kernel saat ini memiliki alternatif.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Nilai kernel pengganti Qualcomm Thermald. Dikembangkan oleh faux123.</string>
   <string name="intellithermal_optimized">Intellithermal Teroptimalkan</string>
@@ -370,6 +369,7 @@
   <string name="usb_fast_charge_summary">Perangkat akan lebih cepat terisi saat terhubung dengan USB. Colokkan kembali saat mengganti pilihan ini.</string>
   <string name="blx">Baterai eXtender</string>
   <string name="blx_summary">Menetapkan batas kapasitas baterai dimana akan diisi setelah melewati nilai tertentu antara 0 dan 100.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Penyimpanan Internal</string>
   <string name="external_storage">Penyimpanan Eksternal</string>

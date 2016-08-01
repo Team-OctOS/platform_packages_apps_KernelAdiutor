@@ -204,7 +204,6 @@
   <!--Thermal-->
   <string name="thermal_info">Uporabljajte le en gonilnik izmed spodaj naštetih, saj lahko uporaba več kot enega povzroči nepredvidljivo obnašanje.</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Qualcommov gonilnik, ki preprečuje pregrevanje. Naj bi bil onesposobljen, če ima kernel alternativo.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Zamenjava v jedru za Qualcommov Thermald. Razvijalec je faux123.</string>
   <string name="intellithermal_optimized">Optimiziran Intellithermal</string>
@@ -372,6 +371,7 @@
   <string name="usb_fast_charge_summary">Baterija naprave se bo polnila hitreje ko bo povezana na USB. Pri izbiri te možnosti izključite-vključite napajanje.</string>
   <string name="blx">Podaljševalec avtonomije baterije</string>
   <string name="blx_summary">Določite mejo do katere naj se napolni baterija z izbiro vrednosti med 0 in 100.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Notranji pomnilnik</string>
   <string name="external_storage">Zunanji pomnilnik</string>
