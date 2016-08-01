@@ -23,8 +23,10 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -35,6 +37,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.NotificationCompat;
 
 import com.grarak.kerneladiutor.R;
+import com.grarak.kerneladiutor.activities.MainActivity;
+import com.grarak.kerneladiutor.activities.StartActivity;
 import com.grarak.kerneladiutor.database.Settings;
 import com.grarak.kerneladiutor.database.tools.customcontrols.Controls;
 import com.grarak.kerneladiutor.database.tools.profiles.Profiles;
@@ -69,6 +73,16 @@ public class Service extends android.app.Service {
     @Override
     public void onStart(Intent intent, int startId) {
         super.onStart(intent, startId);
+
+        RootUtils.SU su = new RootUtils.SU(false, null);
+        if (su.runCommand("getprop ro.kerneladiutor.hide").equals("true")) {
+            getPackageManager().setComponentEnabledSetting(new ComponentName(this, StartActivity.class),
+                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+        } else {
+            getPackageManager().setComponentEnabledSetting(new ComponentName(this, StartActivity.class),
+                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+        }
+        su.close();
 
         Messenger messenger = null;
         if (intent != null) {

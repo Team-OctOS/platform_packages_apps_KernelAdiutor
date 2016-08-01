@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
 
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.NavigationActivity" />
         <activity android:name=".activities.TextActivity" />
         <activity
@@ -43,7 +44,7 @@
             android:configChanges="locale|keyboard|keyboardHidden|orientation|screenSize|navigation" />
 
         <receiver android:name=".services.boot.Receiver">
-            <intent-filter>
+            <intent-filter android:priority="999">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
