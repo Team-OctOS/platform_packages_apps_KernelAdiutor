@@ -64,15 +64,13 @@ public class LMK {
     }
 
     public static void setMinFree(String value, Context context) {
-        run(Control.chmod("644", MINFREE), MINFREE + "chmod444", context);
+        run(Control.chmod("755", MINFREE), MINFREE + "chmod755", context);
         run(Control.write(value, MINFREE), MINFREE, context);
-        run(Control.chmod("000", MINFREE), MINFREE + "chmod000", context);
     }
 
     public static List<String> getMinFrees() {
-        RootUtils.chmod(MINFREE, "644");
+        RootUtils.chmod(MINFREE, "755");
         String value = Utils.readFile(MINFREE);
-        RootUtils.chmod(MINFREE, "000");
         return Arrays.asList(value.split(","));
     }
 

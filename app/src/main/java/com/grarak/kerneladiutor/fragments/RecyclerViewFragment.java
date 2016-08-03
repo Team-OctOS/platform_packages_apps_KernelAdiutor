@@ -36,10 +36,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +75,7 @@ public abstract class RecyclerViewFragment extends BaseFragment {
 
     private View mProgress;
 
-    private List<BaseFragment> mViewPagerFragments = new ArrayList<>();
+    private List<Fragment> mViewPagerFragments;
     private ViewPagerAdapter mViewPagerAdapter;
     private View mViewPagerParent;
     private ViewPager mViewPager;
@@ -104,6 +107,7 @@ public abstract class RecyclerViewFragment extends BaseFragment {
 
         mRecyclerView = (RecyclerView) mRootView.findViewById(R.id.recyclerview);
 
+        mViewPagerFragments = new ArrayList<>();
         mViewPagerParent = mRootView.findViewById(R.id.viewpagerparent);
         mViewPager = (ViewPager) mRootView.findViewById(R.id.viewpager);
         mCirclePageIndicator = (CirclePageIndicator) mRootView.findViewById(R.id.indicator);
@@ -169,7 +173,6 @@ public abstract class RecyclerViewFragment extends BaseFragment {
             mForegroundHeight = getResources().getDisplayMetrics().heightPixels;
         }
 
-        mViewPagerFragments.clear();
         if (itemsSize() == 0) {
             mLoader = new AsyncTask<Void, Void, List<RecyclerViewItem>>() {
 
@@ -243,7 +246,8 @@ public abstract class RecyclerViewFragment extends BaseFragment {
             mViewPagerParent.setTranslationY(0);
         }
         if (mViewPager != null) {
-            mViewPager.setAdapter(mViewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(), mViewPagerFragments));
+            mViewPager.setAdapter(mViewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),
+                    mViewPagerFragments));
             mCirclePageIndicator.setViewPager(mViewPager);
         }
     }
@@ -324,9 +328,9 @@ public abstract class RecyclerViewFragment extends BaseFragment {
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
 
-        private final List<BaseFragment> mFragments;
+        private final List<Fragment> mFragments;
 
-        public ViewPagerAdapter(FragmentManager fragmentManager, List<BaseFragment> fragments) {
+        public ViewPagerAdapter(FragmentManager fragmentManager, List<Fragment> fragments) {
             super(fragmentManager);
             mFragments = fragments;
         }

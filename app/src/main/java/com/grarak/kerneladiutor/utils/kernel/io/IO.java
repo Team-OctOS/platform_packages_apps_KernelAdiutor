@@ -42,21 +42,22 @@ public abstract class IO {
     private static final List<String> sExternalReadAhead = new ArrayList<>();
 
     static {
+        sInternalScheduler.add("/sys/block/mmcblk0/queue/scheduler");
         sInternalScheduler.add("/sys/block/dm-0/queue/scheduler");
         sInternalScheduler.add("/sys/block/sda/queue/scheduler");
-        sInternalScheduler.add("/sys/block/sde/queue/scheduler");
-        sInternalScheduler.add("/sys/block/mmcblk0/queue/scheduler");
+
+        sInternalIOSched.add("/sys/block/mmcblk0/queue/iosched");
         sInternalIOSched.add("/sys/block/dm-0/queue/iosched");
         sInternalIOSched.add("/sys/block/sda/queue/iosched");
-        sInternalIOSched.add("/sys/block/sde/queue/iosched");
-        sInternalIOSched.add("/sys/block/mmcblk0/queue/iosched");
+
+        sInternalReadAhead.add("/sys/block/mmcblk0/queue/read_ahead_kb");
         sInternalReadAhead.add("/sys/block/dm-0/queue/read_ahead_kb");
         sInternalReadAhead.add("/sys/block/sda/queue/read_ahead_kb");
-        sInternalReadAhead.add("/sys/block/sde/queue/read_ahead_kb");
-        sInternalReadAhead.add("/sys/block/mmcblk0/queue/read_ahead_kb");
 
         sExternalScheduler.add("/sys/block/mmcblk1/queue/scheduler");
+
         sExternalIOSched.add("/sys/block/mmcblk1/queue/iosched");
+
         sExternalReadAhead.add("/sys/block/mmcblk1/queue/read_ahead_kb");
     }
 

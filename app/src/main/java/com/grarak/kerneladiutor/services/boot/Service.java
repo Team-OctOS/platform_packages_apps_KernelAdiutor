@@ -75,13 +75,10 @@ public class Service extends android.app.Service {
         super.onStart(intent, startId);
 
         RootUtils.SU su = new RootUtils.SU(false, null);
-        if (su.runCommand("getprop ro.kerneladiutor.hide").equals("true")) {
-            getPackageManager().setComponentEnabledSetting(new ComponentName(this, StartActivity.class),
-                    PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
-        } else {
-            getPackageManager().setComponentEnabledSetting(new ComponentName(this, StartActivity.class),
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
-        }
+        String prop = su.runCommand("getprop ro.kerneladiutor.hide");
+        getPackageManager().setComponentEnabledSetting(new ComponentName(this, StartActivity.class),
+                prop != null && prop.equals("true") ? PackageManager.COMPONENT_ENABLED_STATE_DISABLED
+                        : PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
         su.close();
 
         Messenger messenger = null;

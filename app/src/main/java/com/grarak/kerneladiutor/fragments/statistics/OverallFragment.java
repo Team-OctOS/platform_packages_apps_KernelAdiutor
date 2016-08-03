@@ -27,6 +27,7 @@ import android.os.AsyncTask;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -81,10 +82,13 @@ public class OverallFragment extends RecyclerViewFragment {
     protected void init() {
         super.init();
 
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         if (mCPUUsageFragment != null) {
-            getChildFragmentManager().beginTransaction().detach(mCPUUsageFragment).commit();
+            transaction.detach(mCPUUsageFragment);
         }
-        getChildFragmentManager().beginTransaction().attach(mCPUUsageFragment = new CPUUsageFragment()).commit();
+        mCPUUsageFragment = new CPUUsageFragment();
+        transaction.attach(mCPUUsageFragment);
+        transaction.commit();
         addViewPagerFragment(mCPUUsageFragment);
     }
 
@@ -453,26 +457,28 @@ public class OverallFragment extends RecyclerViewFragment {
                     }
                 }
             }).start();
-            if (sFreqs == null || sCPUUsages == null || sUsages == null || !isAdded()) return;
-            for (int i = 0; i < sUsages.size(); i++) {
-                View usageView = sUsages.get(i);
-                TextView usageOfflineText = (TextView) usageView.findViewById(R.id.usage_offline_text);
-                TextView usageLoadText = (TextView) usageView.findViewById(R.id.usage_load_text);
-                TextView usageFreqText = (TextView) usageView.findViewById(R.id.usage_freq_text);
-                XYGraph usageGraph = (XYGraph) usageView.findViewById(R.id.usage_graph);
-                if (sFreqs[i] == 0) {
-                    usageOfflineText.setVisibility(View.VISIBLE);
-                    usageLoadText.setVisibility(View.GONE);
-                    usageFreqText.setVisibility(View.GONE);
-                    usageGraph.addPercentage(0);
-                } else {
-                    usageOfflineText.setVisibility(View.GONE);
-                    usageLoadText.setVisibility(View.VISIBLE);
-                    usageFreqText.setVisibility(View.VISIBLE);
-                    usageFreqText.setText(Utils.strFormat("%d" + getString(R.string.mhz), sFreqs[i] / 1000));
-                    usageLoadText.setText(Utils.strFormat("%d%%", Math.round(sCPUUsages[i + 1])));
-                    usageGraph.addPercentage(Math.round(sCPUUsages[i + 1]));
+            try {
+                for (int i = 0; i < sUsages.size(); i++) {
+                    View usageView = sUsages.get(i);
+                    TextView usageOfflineText = (TextView) usageView.findViewById(R.id.usage_offline_text);
+                    TextView usageLoadText = (TextView) usageView.findViewById(R.id.usage_load_text);
+                    TextView usageFreqText = (TextView) usageView.findViewById(R.id.usage_freq_text);
+                    XYGraph usageGraph = (XYGraph) usageView.findViewById(R.id.usage_graph);
+                    if (sFreqs[i] == 0) {
+                        usageOfflineText.setVisibility(View.VISIBLE);
+                        usageLoadText.setVisibility(View.GONE);
+                        usageFreqText.setVisibility(View.GONE);
+                        usageGraph.addPercentage(0);
+                    } else {
+                        usageOfflineText.setVisibility(View.GONE);
+                        usageLoadText.setVisibility(View.VISIBLE);
+                        usageFreqText.setVisibility(View.VISIBLE);
+                        usageFreqText.setText(Utils.strFormat("%d" + getString(R.string.mhz), sFreqs[i] / 1000));
+                        usageLoadText.setText(Utils.strFormat("%d%%", Math.round(sCPUUsages[i + 1])));
+                        usageGraph.addPercentage(Math.round(sCPUUsages[i + 1]));
+                    }
                 }
+            } catch (Exception ignored) {
             }
         }
 
