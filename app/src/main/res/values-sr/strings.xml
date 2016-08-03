@@ -197,6 +197,7 @@
   <string name="light">Лагано</string>
   <string name="medium">Средње</string>
   <string name="very_aggressive">Веома агресивно</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">На располагању</string>
   <string name="read">Читање</string>

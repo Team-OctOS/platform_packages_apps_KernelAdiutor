@@ -65,6 +65,7 @@
   <string name="wake">Ébresztés</string>
   <string name="sound">Hang</string>
   <string name="battery">Akkumulátor</string>
+  <string name="led">LED</string>
   <string name="io_scheduler">I/O ütemező</string>
   <string name="ksm">Kernel Samepage Merging</string>
   <string name="lmk">Low Memory Killer</string>
@@ -295,6 +296,7 @@
   <string name="warning">Figyelmeztetés</string>
   <string name="thermal_info">Csak egy termikus vezérlőt használj a következő lehetőségek közül, több egy időben való használata szokatlan viselkedést okozhat.</string>
   <string name="thermald">Thermald</string>
+  <string name="thermald_summary">Gyári termikus illesztőprogram, amely megakadályozza az eszköz túlmelegedését. Ezt ki kell kapcsolni, ha az aktuális kernel alternatívával rendelkezik.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Egy kernelen belüli Qualcomm Thermald helyettesítő. Fejlesztő: faux123.</string>
   <string name="intellithermal_optimized">Optimalizált Intellithermal</string>
@@ -485,6 +487,12 @@
   <string name="charging_current">Töltőáram</string>
   <string name="charging_current_summary">Állíts be egyéni akkumulátor töltési mértéket. Figyelmeztetés: az 1250 mA fölötti érték károsíthatja a töltés vezérlőjét.</string>
   <!-- LED -->
+  <string name="fade">Halványulás</string>
+  <string name="fade_summary">Engedélyezd a halványuláshoz, kapcsold ki a villogáshoz.</string>
+  <string name="intensity">Erősség</string>
+  <string name="speed">Sebesség</string>
+  <string name="stock">Gyári</string>
+  <string name="continuous_light">Folyamatos fény</string>
   <!-- I/O Scheduler -->
   <string name="internal_storage">Belső memória</string>
   <string name="external_storage">Külső tárhely</string>
@@ -518,6 +526,11 @@
   <string name="light">Gyenge</string>
   <string name="medium">Közepes</string>
   <string name="very_aggressive">Nagyon agresszív</string>
+  <string name="kill_lmk">LMK tiltása</string>
+  <string name="kill_lmk_summary">LMK tiltása, ha a swap használatban van.</string>
+  <string name="kill_lmk_threshold">LMK tiltási küszöb</string>
+  <string name="kill_lmk_threshold_summary">Mennyire kell a swap-nek tele lennie az LMK tiltásához.</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Elérhető</string>
   <string name="poolsize">Medenceméret</string>

@@ -142,6 +142,7 @@
   <!-- I/O Scheduler -->
   <!-- Kernel Samepage Merging -->
   <!-- Low Memory Killer -->
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <!-- Misc -->
   <!-- Custom Controls -->

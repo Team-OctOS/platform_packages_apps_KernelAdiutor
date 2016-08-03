@@ -62,6 +62,7 @@
   <string name="wake">Пробуждение</string>
   <string name="sound">Звук</string>
   <string name="battery">Батарея</string>
+  <string name="led">LED-индикация</string>
   <string name="io_scheduler">Планировщик I/O</string>
   <string name="ksm">Объединять страницы памяти ядра</string>
   <string name="lmk">Очистка памяти</string>
@@ -99,7 +100,7 @@
   <string name="android_version">Версия Android</string>
   <string name="android_api_level">Android SDK</string>
   <string name="android_codename">Кодовое имя Андроид</string>
-  <string name="fingerprint">Отпечаток пальца</string>
+  <string name="fingerprint">Отпечаток</string>
   <string name="build_display_id">Идентификатор сборки дисплея</string>
   <string name="baseband">Модем</string>
   <string name="rom">Прошивка</string>
@@ -493,6 +494,7 @@
   <string name="light">Легкий</string>
   <string name="medium">Средний</string>
   <string name="very_aggressive">Очень агрессивный</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Доступно</string>
   <string name="poolsize">Размер пула</string>

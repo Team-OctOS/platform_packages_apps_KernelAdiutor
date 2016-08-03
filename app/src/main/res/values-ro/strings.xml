@@ -65,6 +65,7 @@
   <string name="wake">Trezire</string>
   <string name="sound">Sunet</string>
   <string name="battery">Baterie</string>
+  <string name="led">LED</string>
   <string name="io_scheduler">Programator I/O</string>
   <string name="ksm">Fuzionarea Kernel Samepage</string>
   <string name="lmk">Killer Memorie scăzută</string>
@@ -199,6 +200,7 @@
   <!-- I/O Scheduler -->
   <!-- Kernel Samepage Merging -->
   <!-- Low Memory Killer -->
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <!-- Misc -->
   <!-- Custom Controls -->

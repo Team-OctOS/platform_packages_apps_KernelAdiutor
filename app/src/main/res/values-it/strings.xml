@@ -518,6 +518,7 @@
   <string name="light">Leggero</string>
   <string name="medium">Medio</string>
   <string name="very_aggressive">Molto aggressivo</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Disponibile</string>
   <string name="poolsize">Poolsize</string>

@@ -3,58 +3,97 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <string name="app_name">Kernel Adiutor
 </string>
+  <string name="checking_info">A verificar a informação&#8230;</string>
+  <string name="checking_root">A verificar acesso de root</string>
+  <string name="searching_busybox">A procurar por busybox</string>
+  <string name="collecting_info">A obter a informação</string>
+  <string name="no_root">Sem root</string>
+  <string name="no_busybox">Sem busybox</string>
   <!-- Security -->
+  <string name="password">Palavra-passe</string>
+  <string name="password_wrong">A palavra-passe está errada</string>
   <string name="select_picture">Selecionar Imagem</string>
   <string name="no_picture">Sem imagem</string>
   <string name="went_wrong">Algo correu mal!</string>
+  <string name="press_back_again_exit">Pressione voltar novamente para sair</string>
   <string name="cancel">Cancelar </string>
   <string name="ok">OK</string>
+  <string name="unknown">Desconhecido</string>
+  <string name="donate">Doar</string>
+  <string name="donate_nope">Eu não vou cair neste esquema!</string>
+  <string name="donate_yes">Eu gosto desta app. Devo doar!</string>
   <string name="apply_on_boot">Aplicar no arranque </string>
   <!-- Permissions Denied -->
   <!-- Editor -->
   <string name="save">Guardar</string>
   <!-- File Picker -->
+  <string name="select_question">Selecionar %s?</string>
+  <string name="wrong_extension">Por favor, selecione um ficheiro com a extensão %s.</string>
   <!-- Units -->
   <string name="mhz">MHz</string>
+  <string name="celsius">ºC</string>
+  <string name="fahrenheit">ºF</string>
   <string name="mb">MB</string>
   <string name="ms">ms</string>
   <string name="mv">mV</string>
   <string name="min">min</string>
+  <string name="mah">mAh</string>
   <string name="ma">mA</string>
   <string name="kb">kB</string>
   <!-- Special signs -->
   <!-- Headers -->
+  <string name="statistics">Estatísticas</string>
   <string name="kernel">Kernel</string>
   <string name="tools">Ferramentas</string>
   <string name="other">Outros</string>
   <!-- Menus -->
+  <string name="overall">Geral</string>
+  <string name="device">Dispositivo</string>
+  <string name="inputs">Entradas</string>
   <string name="cpu">CPU</string>
   <string name="cpu_voltage">Voltagem do CPU</string>
   <string name="cpu_hotplug">CPU Hotplug</string>
-  <string name="thermal">Temperatura</string>
+  <string name="thermal">Termal</string>
   <string name="gpu">GPU</string>
   <string name="screen">Ecrã</string>
   <string name="wake">Acordar</string>
   <string name="sound">Som</string>
   <string name="battery">Bateria</string>
-  <string name="io_scheduler">I/O Scheduler</string>
-  <string name="ksm">Kernel Samepage Merging</string>
-  <string name="virtual_memory">Memória virtual</string>
+  <string name="led">LED</string>
+  <string name="io_scheduler">Planeamento I/O</string>
+  <string name="ksm">Memória Partilhada de Kernel</string>
+  <string name="virtual_memory">Memória Virtual</string>
   <string name="entropy">Entropia</string>
+  <string name="misc">Diversos</string>
+  <string name="custom_controls">Controles Personalizados</string>
   <string name="downloads">Transferências</string>
-  <string name="backup">Backup</string>
-  <string name="build_prop_editor">Build prop Editor</string>
+  <string name="backup">Cópia de Segurança</string>
+  <string name="build_prop_editor">Editor Build.prop</string>
   <string name="profile">Perfil</string>
   <string name="recovery">Recuperação</string>
   <string name="initd">Init.d</string>
+  <string name="about">Sobre</string>
+  <string name="contributors">Colaboradores</string>
+  <string name="faq">Perguntas Frequentes</string>
   <string name="settings">Definições</string>
   <!-- Overall -->
-  <string name="offline">Desativado</string>
+  <string name="offline">Off-line</string>
   <string name="core">Núcleo %d</string>
+  <string name="temperature">Temperatura</string>
+  <string name="frequencies">Frequências</string>
+  <string name="refresh">Atualizar</string>
+  <string name="reset">Reiniciar</string>
   <string name="restore">Restaurar</string>
   <string name="uptime">Uptime</string>
   <!-- Device -->
+  <string name="processor">Processador</string>
+  <string name="vendor">Fabricante</string>
   <string name="features">Funcionalidades</string>
+  <string name="ram">Ram</string>
+  <string name="android_version">Versão de Android</string>
+  <string name="android_api_level">SDK de Android</string>
+  <string name="android_codename">Nome de Código de Android</string>
+  <string name="fingerprint">Assinatura Digital</string>
   <!-- Inputs -->
   <!-- CPU -->
   <string name="cpu_max_freq">Frequência máxima CPU</string>
@@ -66,18 +105,18 @@
   <string name="cpu_governor">Governador CPU</string>
   <string name="cpu_governor_tunables">Parâmetros governador CPU</string>
   <string name="cpu_governor_tunables_summary">Os vários itens de configuração que são dependentes do Governador.</string>
-  <string name="mc_power_saving">Modo poupança energia multi núcleos</string>
-  <string name="mc_power_saving_summary">Tenta agrupar tarefas no menor número de núcleos possiveis.</string>
+  <string name="mc_power_saving">Modo de Poupança Multinuclear</string>
+  <string name="mc_power_saving_summary">Tenta agrupar tarefas no menor número de núcleos possíveis.</string>
   <string name="disabled">Desativado</string>
   <string name="enabled">Ativado</string>
   <string name="aggressive">Agressivo</string>
-  <string name="power_saving_wq">Agendar filas de trabalho em CPUs acordados para economizar energia.</string>
+  <string name="power_saving_wq">Agendar filas de trabalho em CPUs acordados para poupar energia.</string>
   <string name="cfs_scheduler_policy">Política de Agendamento CFS</string>
   <string name="cfs_scheduler_policy_summary">Política decide o Agendador como equilibrar as tarefas na unidade de CPU diferente.</string>
   <string name="cpu_quiet">CPUQuiet</string>
   <string name="cpu_quiet_governor">Governador CPUQuiet</string>
   <string name="cpu_boost">Impulso de CPU</string>
-  <string name="debug_mask">Depurar máscara</string>
+  <string name="debug_mask">Máscara de Depurar</string>
   <string name="interval">Intervalo</string>
   <string name="interval_summary">Intervalo mínimo em que o CPU é impulsionado.</string>
   <string name="sync_threshold">Limiar de sincronização</string>
@@ -188,7 +227,9 @@
   <string name="cycle_down">Ciclo para baixo</string>
   <string name="cycle_up">Ciclo para cima</string>
   <string name="core_control">Controlo do núcleo</string>
+  <string name="hcube">H-Cube</string>
   <!--Thermal-->
+  <string name="warning">Aviso</string>
   <string name="thermal_info">Use apenas um condutor térmico entre as seguintes opções, usando mais do que ao mesmo tempo pode causar um comportamento inesperado.</string>
   <string name="thermald">Thermald</string>
   <string name="intellithermal">Intellithermal</string>
@@ -198,6 +239,7 @@
   <string name="vdd_restriction">Restrição de VDD</string>
   <string name="freq_throttle_temp">Frequência do sensor de temperatura</string>
   <string name="freq_step">Passo da frequência</string>
+  <string name="poll">Sondagem</string>
   <string name="temp_hysteresis">Histerese da temperatura</string>
   <string name="temp_safety">Segurança de temperatura</string>
   <string name="temp_throttle">Regulador de temperatura</string>
@@ -231,8 +273,10 @@
   <string name="laziness_summary">Isto aumenta o limiar de rampa para cima ou para baixo as frequências GPU. Quanto menor, mais desempenho.</string>
   <string name="ramp_thresold">Rampa Thresold</string>
   <string name="ramp_thresold_summary">Isso aumenta o número de vezes que o governador da GPU faz os pedidos. Quanto mais alto valor, maior a performance.</string>
+  <string name="idle_wait">Aguardar Inatividade</string>
   <string name="workload">Carga de trabalho</string>
   <!-- Screen -->
+  <string name="screen_color">Cor do Ecrã</string>
   <string name="red">Vermelho</string>
   <string name="green">Verde</string>
   <string name="blue">Azul</string>
@@ -245,6 +289,7 @@
   <string name="screen_value">Valor do ecrã</string>
   <string name="screen_contrast">Contraste do ecrã</string>
   <string name="high_brightness_mode">Modo de alto brilho</string>
+  <string name="srgb">sRGB</string>
   <string name="gamma">Gamma</string>
   <string name="red_greys">Cinzas vermelhos</string>
   <string name="red_mids">Médio vermelho</string>
@@ -290,6 +335,7 @@
   <string name="full">Completo</string>
   <string name="bottom_half">Metade inferior</string>
   <string name="top_half">Metade superior</string>
+  <string name="half">Metade</string>
   <string name="s2w">Sweep2Wake</string>
   <string name="s2w_summary">Acorda seu dispositivo com um scroll no ecrã.</string>
   <string name="s2s">Sweep2Sleep</string>
@@ -300,6 +346,9 @@
   <string name="s2w_charging">Sweep2Wake durante o carregamento</string>
   <string name="dt2w_charging">DoubleTap2Wake durante o carregamento</string>
   <string name="dt2w_s2w_charging">DoubleTap2Wake + Sweep2Wake durante o carregamento</string>
+  <string name="s2s_right">Deslize para a Direita</string>
+  <string name="s2s_left">Deslize para a Esquerda</string>
+  <string name="s2s_any">Deslize para a Direita ou Esquerda</string>
   <string name="slide_up">Deslize para cima</string>
   <string name="slide_down">Deslize para baixo</string>
   <string name="slide_left">Deslize para  a esquerda</string>
@@ -311,6 +360,7 @@
   <string name="draw_m">Desenhar M</string>
   <string name="camera_gesture">Gesto de camera</string>
   <string name="pocket_mode">Modo de bolso</string>
+  <string name="timeout">Tempo expirou</string>
   <string name="power_key_suspend">Suspender na tecla de power</string>
   <string name="power_key_suspend_summary">Ligar está opção vai desligar os wake controls quando o ecrã for desligado através do botão de power.</string>
   <!-- Sound -->
@@ -323,11 +373,20 @@
   <string name="microphone_gain">Ganho do microfone</string>
   <string name="volume_gain">Ganho de volume</string>
   <!-- Battery -->
+  <string name="level">Nível</string>
+  <string name="voltage">Voltagem</string>
+  <string name="capacity">Capacidade</string>
   <string name="usb_fast_charge">Carga rápida USB</string>
   <string name="usb_fast_charge_summary">Dispositivo irá carregar mais rápido quando conectado com USB. Reconecte o carregador ao alterar esta opção.</string>
   <string name="blx">Extensor de autonomia da bateria</string>
   <string name="blx_summary">Defina um limite para a capacidade que a bateria será carregada, passando um valor entre 0 e 100.</string>
+  <string name="charge_rate">Percentagem de Carregamento</string>
+  <string name="charging_current">Carregamento Atual</string>
   <!-- LED -->
+  <string name="intensity">Intensidade</string>
+  <string name="speed">Velocidade</string>
+  <string name="stock">Stock</string>
+  <string name="continuous_light">Luz contínua</string>
   <!-- I/O Scheduler -->
   <string name="internal_storage">Armazenamento interno</string>
   <string name="external_storage">Armazenamento externo</string>
@@ -338,6 +397,12 @@
   <string name="read_ahead">Read-ahead</string>
   <string name="read_ahead_summary">O valor de Read-ahead na memória do telefone.</string>
   <!-- Kernel Samepage Merging -->
+  <string name="full_scans">Análises completas</string>
+  <string name="pages_shared">Páginas partilhadas</string>
+  <string name="pages_sharing">Partilha de páginas</string>
+  <string name="pages_unshared">Páginas não partilhadas</string>
+  <string name="pages_volatile">Páginas voláteis</string>
+  <string name="pages_to_scan">Páginas a analisar</string>
   <!-- Low Memory Killer -->
   <string name="foreground_app">Aplicações de primeiro plano</string>
   <string name="visible_app">Aplicações visíveis</string>
@@ -349,6 +414,8 @@
   <string name="light">leve</string>
   <string name="medium">Médio</string>
   <string name="very_aggressive">Muito agressivo</string>
+  <string name="kill_lmk">Terminar LMK</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Disponível</string>
   <string name="read">Ler</string>
@@ -386,37 +453,64 @@
   <string name="wlan_rx_wakelock_divider">wlan_rx Wakelock divisor</string>
   <string name="msm_hsic_wakelock_divider">msm_hsic Wakelock divisor</string>
   <!-- Custom Controls -->
+  <string name="welcome">Bem-vindo</string>
+  <string name="custom_controls_summary">Nesta secção pode criar ou importar controlos personalizados, que ainda não existem na app.</string>
+  <string name="example">Exemplos</string>
+  <string name="create">Criar</string>
+  <string name="import_item">Importar</string>
+  <string name="control_switch">Mudar</string>
   <string name="test">Teste</string>
   <string name="edit">Editar</string>
   <string name="delete">Excluir</string>
   <string name="name">Nome</string>
   <!-- Downloads -->
   <string name="downloading_counting">%1$s/%2$s</string>
+  <string name="check_md5">Verificação de md5</string>
+  <string name="install">Instalar</string>
   <string name="cwm_recovery">CWM Recovery</string>
   <string name="twrp">TWRP</string>
   <string name="manual_flashing">Vou usar as minhas mãos</string>
+  <string name="file_location">Ficheiro transferido está em %s</string>
   <string name="backing_up">A efetuar backup</string>
   <string name="flashing">A flashar</string>
   <string name="restoring">A restaurar</string>
   <!-- Backup -->
+  <string name="boot_partition">Partição de arranque</string>
+  <string name="recovery_partition">Partição de recuperação</string>
+  <string name="fota_partition">Partição de FOTA</string>
+  <string name="flash">Flash</string>
   <!-- Build prop Editor -->
   <string name="search">Pesquisa</string>
   <string name="key">Chave</string>
   <string name="value">Valor</string>
+  <string name="key_empty">Chave não pode estar vazia!</string>
   <!-- Profile -->
+  <string name="no_changes">Não foram efetuadas alterações!</string>
+  <string name="apply_question">Aplicar %s?</string>
+  <string name="details">Detalhes</string>
   <string name="wipe_data">Limpar dados</string>
   <string name="wipe_cache">Limpar Cache</string>
   <string name="flash_zip">Flash Zip</string>
   <string name="flash_now_confirm">Você quer executar suas ações? Seu dispositivo irá reiniciar para a recuperação e as ações serão executadas na ordem em que elas foram adicionadas.</string>
   <string name="applied">Aplicado</string>
+  <string name="profile_select">Selecionar Perfil</string>
+  <string name="applying_profile">A aplicar %s!</string>
   <!-- Init.d -->
   <string name="emulate_initd">Emular init. d</string>
+  <string name="exceute_question">Executar %s?</string>
   <string name="executing">Em execução</string>
+  <string name="result">Resultado</string>
   <!-- About -->
+  <string name="libraries_used">Bibliotecas usadas</string>
   <!-- Contributors -->
+  <string name="no_internet">Por favor, verifique a sua ligação à Internet!</string>
   <!-- FAQ -->
   <!-- Settings -->
   <string name="dark_theme">Tema escuro</string>
+  <string name="fahrenheit_title">Fahrenheit</string>
+  <string name="ten_sec">10 segundos</string>
+  <string name="twenty_sec">20 segundos</string>
+  <string name="fifty_sec">50 segundos</string>
   <string name="debugging">Depuração</string>
   <string name="logcat">Logcat</string>
   <string name="logcat_summary">Cópia do Logcat para /sdcard/logcat.txt</string>

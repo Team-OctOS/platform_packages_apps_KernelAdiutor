@@ -394,6 +394,7 @@
   <string name="light">緩め</string>
   <string name="medium">中</string>
   <string name="very_aggressive">積極的 (強)</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">利用可能</string>
   <string name="poolsize">プールサイズ</string>

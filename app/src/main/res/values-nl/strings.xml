@@ -184,6 +184,7 @@
   <string name="hysteresis">Hysteresis Waarde</string>
   <string name="hysteresis_summary">Des te lager, des te sneller de reactie.</string>
   <string name="cpu_threshold">CPU drempel</string>
+  <string name="cpu_threshold_summary">Hoe hoger, hoe minder CPU\'s gebruikt worden.</string>
   <string name="suspend">Staken</string>
   <string name="suspend_summary">Staken voorkomen.</string>
   <string name="cpus_boosted">CPUs Versterkt</string>
@@ -192,6 +193,8 @@
   <string name="min_cpu_online_summary">Minimaal aantal CPU\'s die altijd online zullen zijn.</string>
   <string name="max_cpu_online">Maximaal aantal CPU\'s online</string>
   <string name="max_cpu_online_summary">Maximaal aantal CPU\'s die altijd online zullen zijn.</string>
+  <string name="max_cpu_online_screen_off">Maximum CPU scherm uit</string>
+  <string name="max_cpu_online_screen_off_summary">Maximum aantal CPU\'s online zijn zal wanneer het scherm uitgeschakeld is.</string>
   <string name="suspend_defer_time">Staak Uitsteltijd</string>
   <string name="defer_sampling">Monstering Uitstellen</string>
   <string name="boost_lock_duration">Versterk Vergrendel Duur</string>
@@ -202,6 +205,7 @@
   <string name="blu_plug">Blu_Plug</string>
   <string name="blu_plug_summary">Een in-kernel vervanger voor Qualcomm\'s MPDecision. Ontwikkeld door Code_Blue team.</string>
   <string name="powersaver_mode">Batterijbesparingsmodus</string>
+  <string name="powersaver_mode_summary">Zet maximaal 1 CPU online met een frequentie van @1728MHz.</string>
   <string name="up_threshold">Online Drempel</string>
   <string name="up_threshold_summary">Over deze drempel zal de driver een kern meer online zetten.</string>
   <string name="up_timer_cnt">Online Timer Beheren</string>
@@ -224,6 +228,8 @@
   <string name="io_is_busy_summary">Gebruikt om de hotplug de I/O tijd als CPU-belastingtijd te doen beschouwen.</string>
   <string name="mako_hotplug">Mako Hotplug</string>
   <string name="mako_hotplug_summary">Een in-kernel vervanger voor Qualcomm\'s MPDecision. Ontwikkeld door franciscofranco.</string>
+  <string name="cpus_on_touch">CPU\'s bij aanraking</string>
+  <string name="cpus_on_touch_summary">Aantal CPU\'s online bij het aanraken van het scherm of knop indrukken.</string>
   <string name="cpu_freq_unplug_limit">CPU Frequentie Unplug Limiet</string>
   <string name="first_level">Eerste niveau</string>
   <string name="first_level_summary">De drempel waarna alle CPUs online gaan.</string>
@@ -236,9 +242,13 @@
   <string name="msm_mpdecision_hotplug">MSM MPDecision Hotplug</string>
   <string name="bricked_hotplug">Bricked Hotplug</string>
   <string name="mb_hotplug_summary">Een in-kernel vervanger voor Qualcomm\'s MPDecision. Ontwikkeld door show-p1984.</string>
+  <string name="screen_off_single_cpu">Scherm uit enkele CPU</string>
+  <string name="screen_off_single_cpu_summary">Gebruik slechts één CPU als het scherm uitgeschakeld is.</string>
   <string name="idle_frequency">Sluimerfrequentie</string>
   <string name="idle_frequency_summary">Als de eerste kern zich onder deze frequentie bevindt, dan de andere kernen niet pluggen.</string>
   <string name="touch_boost_time">Aanraak Versterktijd</string>
+  <string name="touch_boost_time_summary">Hoe lang de CPU gestimuleerd moet worden na het aanraken van het scherm.</string>
+  <string name="boost_frequency_core">Boost Frequentie Core %d</string>
   <string name="start_delay">Startvertraging</string>
   <string name="start_delay_summary">Tijd tot Hotplug begint te werken.</string>
   <string name="delay">Verstraging</string>
@@ -250,15 +260,27 @@
   <string name="sampling_rate">Sampling Ratio</string>
   <string name="cpu_down_rate">CPU Uitval Ratio</string>
   <string name="cpu_up_rate">CPU Online Ratio</string>
+  <string name="thunderplug">Thunderplug</string>
+  <string name="thunderplug_summary">Een in-kernel vervanger voor Qualcomm\'s hotplugging. Ontwikkeld door varunchitre15.</string>
+  <string name="min_cpu_online_screen_off">Minimum CPU scherm uit</string>
+  <string name="min_cpu_online_screen_off_summary">Minimum aantal CPU\'s die online zullen zijn wanneer het scherm uitgeschakeld is.</string>
   <string name="endurance_level">Langdurigheidsniveau</string>
   <string name="endurance_level_summary">Energiebesparend Profiel.</string>
   <string name="quad_core_mode">Quad Core-modus</string>
   <string name="dual_core_mode">Dual Core-modus</string>
   <string name="zen_decision">Zen Besluit</string>
+  <string name="zen_decision_summary">Een in-kernel vervanger voor Qualcomm\'s MPDecision. Ontwikkeld door bbedward.</string>
   <string name="wake_wait_time">Wachttijd voor ontwaken</string>
+  <string name="wake_wait_time_summary">Wachttijd voor het aanzetten van een kern.</string>
+  <string name="bat_threshold_ignore">Batterij drempel negeren</string>
   <string name="bat_threshold_ignore_summary">Geen kern aanzetten wanneer onder de oplaadgrens is opgeladen.</string>
   <string name="autosmp">AutoSMP</string>
+  <string name="autosmp_summary">Een in-kernel vervanger voor Qualcomm\'s MPDecision. Ontwikkeld door mrg666.</string>
+  <string name="downrate_limits">Downrate grenzen</string>
+  <string name="uprate_limits">Uprate grenzen</string>
   <string name="core_control">Kern controle</string>
+  <string name="hcube">H-Cube</string>
+  <string name="hcube_summary">OnePlus\' bewerkte Core Control.</string>
   <!--Thermal-->
   <string name="vdd_restriction">VDD beperking</string>
   <string name="freq_throttle_temp">Temperatuur frequentieversnelling</string>
@@ -304,6 +326,7 @@
   <!-- I/O Scheduler -->
   <!-- Kernel Samepage Merging -->
   <!-- Low Memory Killer -->
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <!-- Misc -->
   <!-- Custom Controls -->

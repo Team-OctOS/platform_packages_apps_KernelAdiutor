@@ -217,6 +217,7 @@
   <string name="light">Lekki</string>
   <string name="medium">Średni</string>
   <string name="very_aggressive">Bardzo agresywny</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Dostępny</string>
   <string name="read">Odczyt</string>

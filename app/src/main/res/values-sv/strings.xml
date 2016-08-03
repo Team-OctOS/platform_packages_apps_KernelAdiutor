@@ -194,6 +194,7 @@
   <string name="light">Lätt</string>
   <string name="medium">Medium</string>
   <string name="very_aggressive">Mycket Aggressiv</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Tillgängligt</string>
   <string name="poolsize">Poolstorlek</string>

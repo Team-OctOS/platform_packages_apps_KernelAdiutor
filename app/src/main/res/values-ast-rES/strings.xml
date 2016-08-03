@@ -352,6 +352,7 @@
   <string name="light">Suave</string>
   <string name="medium">Mediu</string>
   <string name="very_aggressive">Peragresivu</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Disponible</string>
   <string name="poolsize">Tamañu de reserva</string>

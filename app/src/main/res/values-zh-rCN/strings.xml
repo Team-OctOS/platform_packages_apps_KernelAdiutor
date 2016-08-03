@@ -430,6 +430,7 @@
   <string name="light">轻度</string>
   <string name="medium">中等</string>
   <string name="very_aggressive">非常积极</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">可用熵</string>
   <string name="poolsize">池大小</string>
