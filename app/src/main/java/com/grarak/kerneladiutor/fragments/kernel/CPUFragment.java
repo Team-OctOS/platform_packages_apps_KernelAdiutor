@@ -41,6 +41,7 @@ import com.grarak.kerneladiutor.views.recyclerview.TitleView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -59,6 +60,9 @@ public class CPUFragment extends RecyclerViewFragment {
     private SelectView mCPUMinLITTLE;
     private SelectView mCPUMaxScreenOffLITTLE;
     private SelectView mCPUGovernorLITTLE;
+
+    private HashMap<Integer, SwitchView> mCoresBig = new HashMap<>();
+    private HashMap<Integer, SwitchView> mCoresLITTLE = new HashMap<>();
 
     private int mCPUMaxFreqBig;
     private int mCPUMinFreqBig;
@@ -128,6 +132,23 @@ public class CPUFragment extends RecyclerViewFragment {
             bigCard.setTitle(getString(R.string.cluster_big));
         }
 
+        final List<Integer> bigCores = CPUFreq.getBigCpuRange();
+
+        mCoresBig.clear();
+        for (final int core : bigCores) {
+            SwitchView coreSwitch = new SwitchView();
+            coreSwitch.setSummary(getString(R.string.core, core + 1));
+            coreSwitch.addOnSwitchListener(new SwitchView.OnSwitchListener() {
+                @Override
+                public void onChanged(SwitchView switchView, boolean isChecked) {
+                    CPUFreq.onlineCpu(core, isChecked, getActivity());
+                }
+            });
+
+            mCoresBig.put(core, coreSwitch);
+            bigCard.addItem(coreSwitch);
+        }
+
         mCPUMaxBig = new SelectView();
         mCPUMaxBig.setTitle(getString(R.string.cpu_max_freq));
         mCPUMaxBig.setSummary(getString(R.string.cpu_max_freq_summary));
@@ -135,9 +156,8 @@ public class CPUFragment extends RecyclerViewFragment {
         mCPUMaxBig.setOnItemSelected(new SelectView.OnItemSelected() {
             @Override
             public void onItemSelected(SelectView selectView, int position, String item) {
-                List<Integer> cores = CPUFreq.getBigCpuRange();
-                CPUFreq.setMaxFreq(CPUFreq.getFreqs().get(position), cores.get(0), cores.get(cores.size() - 1),
-                        getActivity());
+                CPUFreq.setMaxFreq(CPUFreq.getFreqs().get(position), bigCores.get(0),
+                        bigCores.get(bigCores.size() - 1), getActivity());
             }
         });
         bigCard.addItem(mCPUMaxBig);
@@ -149,9 +169,8 @@ public class CPUFragment extends RecyclerViewFragment {
         mCPUMinBig.setOnItemSelected(new SelectView.OnItemSelected() {
             @Override
             public void onItemSelected(SelectView selectView, int position, String item) {
-                List<Integer> cores = CPUFreq.getBigCpuRange();
-                CPUFreq.setMinFreq(CPUFreq.getFreqs().get(position), cores.get(0), cores.get(cores.size() - 1),
-                        getActivity());
+                CPUFreq.setMinFreq(CPUFreq.getFreqs().get(position), bigCores.get(0),
+                        bigCores.get(bigCores.size() - 1), getActivity());
             }
         });
         bigCard.addItem(mCPUMinBig);
@@ -164,9 +183,8 @@ public class CPUFragment extends RecyclerViewFragment {
             mCPUMaxScreenOffBig.setOnItemSelected(new SelectView.OnItemSelected() {
                 @Override
                 public void onItemSelected(SelectView selectView, int position, String item) {
-                    List<Integer> cores = CPUFreq.getBigCpuRange();
-                    CPUFreq.setMaxScreenOffFreq(CPUFreq.getFreqs().get(position), cores.get(0), cores.get(cores.size() - 1),
-                            getActivity());
+                    CPUFreq.setMaxScreenOffFreq(CPUFreq.getFreqs().get(position), bigCores.get(0),
+                            bigCores.get(bigCores.size() - 1), getActivity());
                 }
             });
             bigCard.addItem(mCPUMaxScreenOffBig);
@@ -179,8 +197,8 @@ public class CPUFragment extends RecyclerViewFragment {
         mCPUGovernorBig.setOnItemSelected(new SelectView.OnItemSelected() {
             @Override
             public void onItemSelected(SelectView selectView, int position, String item) {
-                List<Integer> cores = CPUFreq.getBigCpuRange();
-                CPUFreq.setGovernor(item, cores.get(0), cores.get(cores.size() - 1), getActivity());
+                CPUFreq.setGovernor(item, bigCores.get(0), bigCores.get(bigCores.size() - 1),
+                        getActivity());
             }
         });
         bigCard.addItem(mCPUGovernorBig);
@@ -202,6 +220,23 @@ public class CPUFragment extends RecyclerViewFragment {
             CardView LITTLECard = new CardView(getActivity());
             LITTLECard.setTitle(getString(R.string.cluster_little));
 
+            final List<Integer> LITTLECores = CPUFreq.getLITTLECpuRange();
+
+            mCoresLITTLE.clear();
+            for (final int core : LITTLECores) {
+                SwitchView coreSwitch = new SwitchView();
+                coreSwitch.setSummary(getString(R.string.core, core + 1));
+                coreSwitch.addOnSwitchListener(new SwitchView.OnSwitchListener() {
+                    @Override
+                    public void onChanged(SwitchView switchView, boolean isChecked) {
+                        CPUFreq.onlineCpu(core, isChecked, getActivity());
+                    }
+                });
+
+                mCoresLITTLE.put(core, coreSwitch);
+                LITTLECard.addItem(coreSwitch);
+            }
+
             mCPUMaxLITTLE = new SelectView();
             mCPUMaxLITTLE.setTitle(getString(R.string.cpu_max_freq));
             mCPUMaxLITTLE.setSummary(getString(R.string.cpu_max_freq_summary));
@@ -209,9 +244,8 @@ public class CPUFragment extends RecyclerViewFragment {
             mCPUMaxLITTLE.setOnItemSelected(new SelectView.OnItemSelected() {
                 @Override
                 public void onItemSelected(SelectView selectView, int position, String item) {
-                    List<Integer> cores = CPUFreq.getLITTLECpuRange();
                     CPUFreq.setMaxFreq(CPUFreq.getFreqs(CPUFreq.getLITTLECpu()).get(position),
-                            cores.get(0), cores.get(cores.size() - 1), getActivity());
+                            LITTLECores.get(0), LITTLECores.get(LITTLECores.size() - 1), getActivity());
                 }
             });
             LITTLECard.addItem(mCPUMaxLITTLE);
@@ -223,9 +257,8 @@ public class CPUFragment extends RecyclerViewFragment {
             mCPUMinLITTLE.setOnItemSelected(new SelectView.OnItemSelected() {
                 @Override
                 public void onItemSelected(SelectView selectView, int position, String item) {
-                    List<Integer> cores = CPUFreq.getLITTLECpuRange();
                     CPUFreq.setMinFreq(CPUFreq.getFreqs(CPUFreq.getLITTLECpu()).get(position),
-                            cores.get(0), cores.get(cores.size() - 1), getActivity());
+                            LITTLECores.get(0), LITTLECores.get(LITTLECores.size() - 1), getActivity());
                 }
             });
             LITTLECard.addItem(mCPUMinLITTLE);
@@ -238,9 +271,8 @@ public class CPUFragment extends RecyclerViewFragment {
                 mCPUMaxScreenOffLITTLE.setOnItemSelected(new SelectView.OnItemSelected() {
                     @Override
                     public void onItemSelected(SelectView selectView, int position, String item) {
-                        List<Integer> cores = CPUFreq.getLITTLECpuRange();
                         CPUFreq.setMaxScreenOffFreq(CPUFreq.getFreqs(CPUFreq.getLITTLECpu()).get(position),
-                                cores.get(0), cores.get(cores.size() - 1), getActivity());
+                                LITTLECores.get(0), LITTLECores.get(LITTLECores.size() - 1), getActivity());
                     }
                 });
                 LITTLECard.addItem(mCPUMaxScreenOffLITTLE);
@@ -253,8 +285,8 @@ public class CPUFragment extends RecyclerViewFragment {
             mCPUGovernorLITTLE.setOnItemSelected(new SelectView.OnItemSelected() {
                 @Override
                 public void onItemSelected(SelectView selectView, int position, String item) {
-                    List<Integer> cores = CPUFreq.getLITTLECpuRange();
-                    CPUFreq.setGovernor(item, cores.get(0), cores.get(cores.size() - 1), getActivity());
+                    CPUFreq.setGovernor(item, LITTLECores.get(0), LITTLECores.get(LITTLECores.size() - 1),
+                            getActivity());
                 }
             });
             LITTLECard.addItem(mCPUGovernorLITTLE);
@@ -642,6 +674,17 @@ public class CPUFragment extends RecyclerViewFragment {
         }
         if (mCPUGovernorLITTLE != null && mCPUGovernorStrLITTLE != null && !mCPUGovernorStrLITTLE.isEmpty()) {
             mCPUGovernorLITTLE.setItem(mCPUGovernorStrLITTLE);
+        }
+
+        if (mCoresBig.size() > 0) {
+            for (int core : mCoresBig.keySet()) {
+                mCoresBig.get(core).setChecked(CPUFreq.getCurFreq(core) != 0);
+            }
+        }
+        if (mCoresLITTLE.size() > 0) {
+            for (int core : mCoresLITTLE.keySet()) {
+                mCoresLITTLE.get(core).setChecked(CPUFreq.getCurFreq(core) != 0);
+            }
         }
     }
 
