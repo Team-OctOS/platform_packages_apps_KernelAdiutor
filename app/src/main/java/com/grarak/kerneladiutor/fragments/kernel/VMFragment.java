@@ -21,11 +21,15 @@ package com.grarak.kerneladiutor.fragments.kernel;
 
 import android.text.InputType;
 
+import com.grarak.kerneladiutor.R;
 import com.grarak.kerneladiutor.fragments.ApplyOnBootFragment;
 import com.grarak.kerneladiutor.fragments.RecyclerViewFragment;
 import com.grarak.kerneladiutor.utils.kernel.vm.VM;
+import com.grarak.kerneladiutor.utils.kernel.vm.ZRAM;
 import com.grarak.kerneladiutor.views.recyclerview.GenericSelectView;
 import com.grarak.kerneladiutor.views.recyclerview.RecyclerViewItem;
+import com.grarak.kerneladiutor.views.recyclerview.SeekBarView;
+import com.grarak.kerneladiutor.views.recyclerview.TitleView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -69,6 +73,36 @@ public class VMFragment extends RecyclerViewFragment {
                 mVMs.put(i, vm);
             }
         }
+
+        if (ZRAM.supported()) {
+            zramInit(items);
+        }
+    }
+
+    private void zramInit(List<RecyclerViewItem> items) {
+        TitleView zramTitle = new TitleView();
+        zramTitle.setText(getString(R.string.zram));
+        items.add(zramTitle);
+
+        SeekBarView zram = new SeekBarView();
+        zram.setTitle(getString(R.string.disksize));
+        zram.setSummary(getString(R.string.disksize_summary));
+        zram.setUnit(getString(R.string.mb));
+        zram.setMax(1000);
+        zram.setOffset(10);
+        zram.setProgress(ZRAM.getDisksize() / 10);
+        zram.setOnSeekBarListener(new SeekBarView.OnSeekBarListener() {
+            @Override
+            public void onStop(SeekBarView seekBarView, int position, String value) {
+                ZRAM.setDisksize(position * 10, getActivity());
+            }
+
+            @Override
+            public void onMove(SeekBarView seekBarView, int position, String value) {
+            }
+        });
+
+        items.add(zram);
     }
 
     private void refreshVMs() {

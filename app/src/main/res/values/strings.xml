@@ -564,6 +564,11 @@
     <string name="kill_lmk_threshold">Kill LMK Threshold</string>
     <string name="kill_lmk_threshold_summary">How full swap needs to be to kill LMK.</string>
 
+    <!-- Virtual Memory -->
+    <string name="zram">Z-RAM</string>
+    <string name="disksize">Disksize</string>
+    <string name="disksize_summary">Attempts to increase performance by avoiding paging on physical storage, instead using a compressed virtual device in RAM. Paging takes place in RAM until it is necessary to use the swap space on physical storage.</string>
+
     <!-- Entropy -->
     <string name="available">Available</string>
     <string name="poolsize">Poolsize</string>
