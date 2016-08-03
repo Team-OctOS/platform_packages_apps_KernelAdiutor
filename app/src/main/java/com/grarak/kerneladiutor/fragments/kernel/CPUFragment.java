@@ -41,6 +41,7 @@ import com.grarak.kerneladiutor.views.recyclerview.TitleView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.SynchronousQueue;
@@ -676,15 +677,18 @@ public class CPUFragment extends RecyclerViewFragment {
             mCPUGovernorLITTLE.setItem(mCPUGovernorStrLITTLE);
         }
 
-        if (mCoresBig.size() > 0) {
-            for (int core : mCoresBig.keySet()) {
-                mCoresBig.get(core).setChecked(CPUFreq.getCurFreq(core) != 0);
+        try {
+            if (mCoresBig.size() > 0) {
+                for (int core : mCoresBig.keySet()) {
+                    mCoresBig.get(core).setChecked(CPUFreq.getCurFreq(core) != 0);
+                }
             }
-        }
-        if (mCoresLITTLE.size() > 0) {
-            for (int core : mCoresLITTLE.keySet()) {
-                mCoresLITTLE.get(core).setChecked(CPUFreq.getCurFreq(core) != 0);
+            if (mCoresLITTLE.size() > 0) {
+                for (int core : mCoresLITTLE.keySet()) {
+                    mCoresLITTLE.get(core).setChecked(CPUFreq.getCurFreq(core) != 0);
+                }
             }
+        } catch (ConcurrentModificationException ignored) {
         }
     }
 
