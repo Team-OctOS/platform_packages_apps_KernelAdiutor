@@ -700,6 +700,7 @@
     <string name="profile_select">Select Profile</string>
     <string name="applying_profile">Applying %s!</string>
     <string name="no_profiles">No profile found! You have to create them first.</string>
+    <string name="sections_disabled">All sections disabled! No profiles for you.</string>
 
     <!-- Init.d -->
     <string name="emulate_initd">Emulate Init.d</string>
@@ -760,4 +761,6 @@
     <string name="password_too_long">Password is too long (max. 32 characters)</string>
     <string name="set_password_first">Set a password first</string>
     <string name="fingerprint_summary">Use fingerprint to pass security check. This will work as long you have fingerprints registered.</string>
+    <string name="sections">Sections</string>
+    <string name="sections_summary">Restart the app when you changed the visibility of sections below.</string>
 </resources>

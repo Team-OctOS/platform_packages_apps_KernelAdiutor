@@ -32,6 +32,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
@@ -93,7 +94,8 @@ public class NavigationActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public final static LinkedHashMap<Integer, Fragment> sFragments = new LinkedHashMap<>();
-    private final static HashMap<Integer, Class> sActivities = new HashMap<>();
+    public final static LinkedHashMap<Integer, Fragment> sActualFragments = new LinkedHashMap<>();
+    public final static HashMap<Integer, Class> sActivities = new HashMap<>();
 
     static {
         sFragments.put(R.string.statistics, null);
@@ -166,7 +168,7 @@ public class NavigationActivity extends BaseActivity
     private NavigationView mNavigationView;
     private boolean mExit;
 
-    private int mSelection = R.string.overall;
+    private int mSelection;
     private boolean mShowPirateDialog = true;
 
     @Override
@@ -196,12 +198,15 @@ public class NavigationActivity extends BaseActivity
 
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
         mNavigationView.setNavigationItemSelectedListener(this);
-        appendFragments(mNavigationView.getMenu());
+        appendFragments();
 
         if (savedInstanceState != null) {
             mSelection = savedInstanceState.getInt("selection");
         }
 
+        if (mSelection == 0 || !sActualFragments.containsKey(mSelection)) {
+            mSelection = firstTab();
+        }
         onItemSelected(mSelection);
 
         int result = Prefs.getInt("license", -1, this);
@@ -229,20 +234,33 @@ public class NavigationActivity extends BaseActivity
         }
     }
 
-    private void appendFragments(Menu menu) {
+    private int firstTab() {
+        for (int id : sActualFragments.keySet()) {
+            if (sActualFragments.get(id) != null || sActivities.containsKey(id)) {
+                return id;
+            }
+        }
+        return 0;
+    }
+
+    private void appendFragments() {
+        sActualFragments.clear();
+        Menu menu = mNavigationView.getMenu();
+        menu.clear();
+
         SubMenu lastSubMenu = null;
-        for (int menuRes : sFragments.keySet()) {
-            if (sFragments.get(menuRes) == null && !sActivities.containsKey(menuRes)) {
-                lastSubMenu = menu.addSubMenu(menuRes);
-            } else {
-                MenuItem menuItem;
-                if (lastSubMenu == null) {
-                    menuItem = menu.add(0, menuRes, 0, menuRes);
-                } else {
-                    menuItem = lastSubMenu.add(0, menuRes, 0, menuRes);
-                }
+        for (int id : sFragments.keySet()) {
+            if (sFragments.get(id) == null && !sActivities.containsKey(id)) {
+                lastSubMenu = menu.addSubMenu(id);
+                sActualFragments.put(id, null);
+            } else if (Prefs.getBoolean(sActivities.containsKey(id) ?
+                    sActivities.get(id).getSimpleName() + "_enabled" :
+                    sFragments.get(id).getClass().getSimpleName() + "_enabled", true, this)) {
+                MenuItem menuItem = lastSubMenu == null ? menu.add(0, id, 0, id) :
+                        lastSubMenu.add(0, id, 0, id);
                 menuItem.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_dots));
-                menuItem.setCheckable(!sActivities.containsKey(menuRes));
+                menuItem.setCheckable(!sActivities.containsKey(id));
+                sActualFragments.put(id, sFragments.get(id));
             }
         }
     }
@@ -252,8 +270,8 @@ public class NavigationActivity extends BaseActivity
         if (mDrawer.isDrawerOpen(GravityCompat.START)) {
             mDrawer.closeDrawer(GravityCompat.START);
         } else {
-            if (sFragments.get(mSelection) instanceof BaseFragment
-                    && !((BaseFragment) sFragments.get(mSelection)).onBackPressed()) {
+            if (sActualFragments.get(mSelection) instanceof BaseFragment
+                    && !((BaseFragment) sActualFragments.get(mSelection)).onBackPressed()) {
                 if (mExit) {
                     mExit = false;
                     super.onBackPressed();
@@ -267,6 +285,8 @@ public class NavigationActivity extends BaseActivity
                         }
                     }, 2000);
                 }
+            } else {
+                super.onBackPressed();
             }
         }
     }
@@ -275,7 +295,7 @@ public class NavigationActivity extends BaseActivity
     public void finish() {
         super.finish();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        for (int key : sFragments.keySet()) {
+        for (int key : sActualFragments.keySet()) {
             Fragment fragment = getSupportFragmentManager().findFragmentByTag(key + "_key");
             if (fragment != null) {
                 fragmentTransaction.remove(fragment);
@@ -314,7 +334,7 @@ public class NavigationActivity extends BaseActivity
     private Fragment getFragment(int res) {
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(res + "_key");
         if (fragment == null) {
-            return sFragments.get(res);
+            return sActualFragments.get(res);
         }
         return fragment;
     }

@@ -599,7 +599,9 @@ public abstract class RecyclerViewFragment extends BaseFragment {
             mLoader.cancel(true);
             mLoader = null;
         }
-        mHandler.removeCallbacks(mRefresh);
+        if (mHandler != null) {
+            mHandler.removeCallbacks(mRefresh);
+        }
     }
 
     protected Handler getHandler() {
