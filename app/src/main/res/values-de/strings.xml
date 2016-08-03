@@ -208,7 +208,6 @@
   <!--Thermal-->
   <string name="thermal_info">Verwenden sie nur einen thermischen Sensor für folgende Optionen. Die Verwendung von mehreren kann zu unerwartetem Verhalten führen.</string>
   <string name="thermald">Thermal</string>
-  <string name="thermald_summary">Thermischer Qualcomm-Treiber, der das Gerät vor Überhitzung hindert. Dies sollte deaktiviert werden, wenn der aktuelle Kernel eine Alternative hat.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Ein interner Kernel-Ersatz für Qualcomms Thermald. Von faux123 entwickelt.</string>
   <string name="intellithermal_optimized">Intellithermal optimiert</string>
@@ -361,6 +360,7 @@
   <string name="usb_fast_charge_summary">Das Gerät lädt schneller, falls verbunden via USB.</string>
   <string name="blx">Akkulaufzeit verlängern</string>
   <string name="blx_summary">Maximale Kapazität die aufgeladen werden soll.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Interner Speicher</string>
   <string name="external_storage">Externer Speicher</string>

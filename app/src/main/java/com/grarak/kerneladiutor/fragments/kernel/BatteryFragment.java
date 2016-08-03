@@ -36,6 +36,7 @@ import com.grarak.kerneladiutor.views.recyclerview.RecyclerViewItem;
 import com.grarak.kerneladiutor.views.recyclerview.SeekBarView;
 import com.grarak.kerneladiutor.views.recyclerview.SwitchView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -105,9 +106,16 @@ public class BatteryFragment extends RecyclerViewFragment {
     }
 
     private void blxInit(List<RecyclerViewItem> items) {
+        List<String> list = new ArrayList<>();
+        list.add(getString(R.string.disabled));
+        for (int i = 0; i <= 100; i++) {
+            list.add(String.valueOf(i));
+        }
+
         SeekBarView blx = new SeekBarView();
         blx.setTitle(getString(R.string.blx));
         blx.setSummary(getString(R.string.blx_summary));
+        blx.setItems(list);
         blx.setProgress(Battery.getBlx());
         blx.setOnSeekBarListener(new SeekBarView.OnSeekBarListener() {
             @Override

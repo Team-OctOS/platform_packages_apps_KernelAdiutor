@@ -19,6 +19,7 @@
  */
 package com.grarak.kerneladiutor.utils;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -414,9 +415,13 @@ public class Utils {
     }
 
     public static void launchUrl(String url, Context context) {
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(url));
-        context.startActivity(i);
+        try {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            context.startActivity(i);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static int getOrientation(Context context) {

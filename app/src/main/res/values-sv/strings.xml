@@ -176,6 +176,7 @@
   <!-- Battery -->
   <string name="usb_fast_charge">USB snabbladdning</string>
   <string name="usb_fast_charge_summary">Enheten laddas snabbare när den är ansluten med USB. Dra ur och sätt tillbaka din laddare när du ändrar det här alternativet.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Intern lagring</string>
   <string name="external_storage">Extern lagring</string>

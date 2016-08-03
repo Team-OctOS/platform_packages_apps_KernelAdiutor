@@ -36,17 +36,41 @@ public class LMK {
 
     private static final String MINFREE = "/sys/module/lowmemorykiller/parameters/minfree";
     private static final String ADAPTIVE = "/sys/module/lowmemorykiller/parameters/enable_adaptive_lmk";
+    private static final String SWAP_WAIT = "/sys/module/lowmemorykiller/parameters/swap_wait";
+    private static final String SWAP_WAIT_PERCENT = "/sys/module/lowmemorykiller/parameters/swap_wait_percent";
+
+    public static void setSwapWaitPercent(int value, Context context) {
+        run(Control.write(String.valueOf(value), SWAP_WAIT_PERCENT), SWAP_WAIT_PERCENT, context);
+    }
+
+    public static int getSwapWaitPercent() {
+        return Utils.strToInt(Utils.readFile(SWAP_WAIT_PERCENT));
+    }
+
+    public static boolean hasSwapWaitPercent() {
+        return Utils.existFile(SWAP_WAIT_PERCENT);
+    }
+
+    public static void enableSwapWait(boolean enable, Context context) {
+        run(Control.write(enable ? "Y" : "N", SWAP_WAIT), SWAP_WAIT, context);
+    }
+
+    public static boolean isSwapWaitEnabled() {
+        return Utils.readFile(SWAP_WAIT).equals("Y");
+    }
+
+    public static boolean hasSwapWait() {
+        return Utils.existFile(SWAP_WAIT);
+    }
 
     public static void setMinFree(String value, Context context) {
-        run(Control.chmod("644", MINFREE), MINFREE + "chmod444", context);
+        run(Control.chmod("755", MINFREE), MINFREE + "chmod755", context);
         run(Control.write(value, MINFREE), MINFREE, context);
-        run(Control.chmod("000", MINFREE), MINFREE + "chmod000", context);
     }
 
     public static List<String> getMinFrees() {
-        RootUtils.chmod(MINFREE, "644");
+        RootUtils.chmod(MINFREE, "755");
         String value = Utils.readFile(MINFREE);
-        RootUtils.chmod(MINFREE, "000");
         return Arrays.asList(value.split(","));
     }
 

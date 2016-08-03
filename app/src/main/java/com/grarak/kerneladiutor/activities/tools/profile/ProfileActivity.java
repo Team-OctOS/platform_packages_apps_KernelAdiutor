@@ -56,6 +56,27 @@ public class ProfileActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mItems.clear();
+        boolean add = false;
+        for (int id : NavigationActivity.sActualFragments.keySet()) {
+            if (id == R.string.kernel) {
+                add = true;
+            } else if (add && NavigationActivity.sActualFragments.get(id) != null) {
+                Fragment fragment = getSupportFragmentManager().findFragmentByTag(id + "_key");
+                mItems.put(getString(id), fragment == null ? NavigationActivity.sActualFragments.get(id)
+                        : fragment);
+            } else if (id == R.string.tools) {
+                break;
+            }
+        }
+
+        if (mItems.size() < 1) {
+            Utils.toast(R.string.sections_disabled, this);
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_profile);
 
         Control.clearProfileCommands();
@@ -66,26 +87,12 @@ public class ProfileActivity extends BaseActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
 
-        mItems.clear();
         if (savedInstanceState == null) {
             ViewUtils.dialogBuilder(getString(R.string.profile_warning), null, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                 }
             }, null, this).show();
-        }
-
-        boolean add = false;
-        for (int id : NavigationActivity.sFragments.keySet()) {
-            if (id == R.string.kernel) {
-                add = true;
-            } else if (add && NavigationActivity.sFragments.get(id) != null) {
-                Fragment fragment = getSupportFragmentManager().findFragmentByTag(id + "_key");
-                mItems.put(getString(id), fragment == null ? NavigationActivity.sFragments.get(id)
-                        : fragment);
-            } else if (id == R.string.tools) {
-                break;
-            }
         }
 
         viewPager.setOffscreenPageLimit(mItems.size());

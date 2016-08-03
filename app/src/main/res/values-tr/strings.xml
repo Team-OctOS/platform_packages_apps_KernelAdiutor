@@ -298,6 +298,7 @@
   <string name="usb_fast_charge_summary">Cihaz, USB ile bağlıyken daha hızlı şarj edecektir. Bu seçeneği değiştirdikten sonra şarj aletinizi yeniden bağlayın.</string>
   <string name="blx">Pil Ömrü Uzatıcı</string>
   <string name="blx_summary">Kapasite için pil 0 ile 100 arasında bir değer ileterek tahsil edilecektir için bir sınır belirleyin.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Dahili Depolama</string>
   <string name="external_storage">Harici Depolama</string>

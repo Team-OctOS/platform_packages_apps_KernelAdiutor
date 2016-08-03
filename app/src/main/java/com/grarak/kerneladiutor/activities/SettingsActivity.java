@@ -42,6 +42,7 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 
 import com.grarak.kerneladiutor.R;
+import com.grarak.kerneladiutor.fragments.statistics.OverallFragment;
 import com.grarak.kerneladiutor.services.boot.Service;
 import com.grarak.kerneladiutor.utils.Prefs;
 import com.grarak.kerneladiutor.utils.Utils;
@@ -91,6 +92,7 @@ public class SettingsActivity extends BaseActivity {
         private static final String KEY_SET_PASSWORD = "set_password";
         private static final String KEY_DELETE_PASSWORD = "delete_password";
         private static final String KEY_FINGERPRINT = "fingerprint";
+        private static final String KEY_SECTIONS = "sections";
 
         private Preference mFingerprint;
 
@@ -140,6 +142,22 @@ public class SettingsActivity extends BaseActivity {
                 mFingerprint = findPreference(KEY_FINGERPRINT);
                 mFingerprint.setEnabled(!Prefs.getString("password", "", getActivity()).isEmpty());
             }
+
+            PreferenceCategory sectionsCategory = (PreferenceCategory) findPreference(KEY_SECTIONS);
+            for (int id : NavigationActivity.sFragments.keySet()) {
+                if (NavigationActivity.sFragments.get(id) != null
+                        || (NavigationActivity.sActivities.containsKey(id)
+                        && NavigationActivity.sActivities.get(id) != SettingsActivity.class)) {
+                    SwitchPreference switchPreference = new SwitchPreference(getActivity());
+                    switchPreference.setSummary(getString(id));
+                    switchPreference.setKey(NavigationActivity.sActivities.containsKey(id) ?
+                            NavigationActivity.sActivities.get(id).getSimpleName() + "_enabled" :
+                            NavigationActivity.sFragments.get(id).getClass().getSimpleName() + "_enabled");
+                    switchPreference.setDefaultValue(true);
+                    switchPreference.setOnPreferenceChangeListener(this);
+                    sectionsCategory.addPreference(switchPreference);
+                }
+            }
         }
 
         @Override
@@ -160,6 +178,10 @@ public class SettingsActivity extends BaseActivity {
                     NavigationActivity.restart();
                     getActivity().recreate();
                     return true;
+                default:
+                    if (key.endsWith("_enabled")) {
+                        return true;
+                    }
             }
             return false;
         }

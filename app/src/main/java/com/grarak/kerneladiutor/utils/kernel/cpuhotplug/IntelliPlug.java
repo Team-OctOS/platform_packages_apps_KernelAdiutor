@@ -44,6 +44,7 @@ public class IntelliPlug {
     private static final String HOTPLUG_INTELLI_PLUG_HYSTERESIS = HOTPLUG_INTELLI_PLUG + "/nr_run_hysteresis";
     private static final String HOTPLUG_INTELLI_PLUG_THRESHOLD = HOTPLUG_INTELLI_PLUG + "/cpu_nr_run_threshold";
     private static final String HOTPLUG_INTELLI_PLUG_SCREEN_OFF_MAX = HOTPLUG_INTELLI_PLUG + "/screen_off_max";
+    private static final String MIN_ONLINE_CPUS = HOTPLUG_INTELLI_PLUG + "/min_online_cpus";
 
     private static final String HOTPLUG_INTELLI_PLUG_5 = "/sys/kernel/intelli_plug";
     private static final String HOTPLUG_INTELLI_PLUG_5_ENABLE = HOTPLUG_INTELLI_PLUG_5 + "/intelli_plug_active";
@@ -158,16 +159,18 @@ public class IntelliPlug {
     }
 
     public static void setIntelliPlugMinCpusOnline(int value, Context context) {
-        run(Control.write(String.valueOf(value), HOTPLUG_INTELLI_PLUG_5_MIN_CPUS_ONLINE),
-                HOTPLUG_INTELLI_PLUG_5_MIN_CPUS_ONLINE, context);
+        run(Control.write(String.valueOf(value), sUseVersion5 ? HOTPLUG_INTELLI_PLUG_5_MIN_CPUS_ONLINE
+                : MIN_ONLINE_CPUS), sUseVersion5 ? HOTPLUG_INTELLI_PLUG_5_MIN_CPUS_ONLINE
+                : MIN_ONLINE_CPUS, context);
     }
 
     public static int getIntelliPlugMinCpusOnline() {
-        return Utils.strToInt(Utils.readFile(HOTPLUG_INTELLI_PLUG_5_MIN_CPUS_ONLINE));
+        return Utils.strToInt(Utils.readFile(sUseVersion5 ? HOTPLUG_INTELLI_PLUG_5_MIN_CPUS_ONLINE
+                : MIN_ONLINE_CPUS));
     }
 
     public static boolean hasIntelliPlugMinCpusOnline() {
-        return Utils.existFile(HOTPLUG_INTELLI_PLUG_5_MIN_CPUS_ONLINE);
+        return Utils.existFile(sUseVersion5 ? HOTPLUG_INTELLI_PLUG_5_MIN_CPUS_ONLINE : MIN_ONLINE_CPUS);
     }
 
     public static void setIntelliPlugCpusBoosted(int value, Context context) {

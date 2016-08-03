@@ -112,7 +112,6 @@
   <string name="downrate_limits">Límits de Baixada</string>
   <string name="uprate_limits">Límits de pujada</string>
   <!--Thermal-->
-  <string name="thermald_summary">El controlador de serie Qualcomm impedeix que el dispositiu es sobre-escalfi. Aquesta opció hauria de ser deshabilitada si la kernel actual té una alternativa.</string>
   <string name="intellithermal">Temperatura Inteligent</string>
   <string name="intellithermal_summary">Una modificació de kernel per Qualcomm Termald. Desenvolupat per faux123.</string>
   <string name="intellithermal_optimized">Temperatura Inteligent Optimitzada</string>
@@ -139,6 +138,7 @@
   <!-- Wake -->
   <!-- Sound -->
   <!-- Battery -->
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <!-- Kernel Samepage Merging -->
   <!-- Low Memory Killer -->

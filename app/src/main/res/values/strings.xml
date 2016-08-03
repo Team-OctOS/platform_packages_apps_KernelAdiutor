@@ -78,6 +78,7 @@
     <string name="wake">Wake</string>
     <string name="sound">Sound</string>
     <string name="battery">Battery</string>
+    <string name="led">LED</string>
     <string name="io_scheduler">I/O Scheduler</string>
     <string name="ksm">Kernel Samepage Merging</string>
     <string name="lmk">Low Memory Killer</string>
@@ -319,7 +320,7 @@
     <string name="warning">Warning</string>
     <string name="thermal_info">Use only one thermal driver from the following options, using more at the same time may cause unexpected behavior.</string>
     <string name="thermald">Thermald</string>
-    <string name="thermald_summary">Stock Qualcomm thermal driver that prevents device from overheating. This should be disabled if current kernel has an alternative.</string>
+    <string name="thermald_summary">Stock thermal driver that prevents device from overheating. This should be disabled if current kernel has an alternative.</string>
     <string name="intellithermal">Intellithermal</string>
     <string name="intellithermal_summary">An in-kernel replacement for Qualcomm\'s Thermald. Developed by faux123.</string>
     <string name="intellithermal_optimized">Intellithermal Optimized</string>
@@ -515,6 +516,14 @@
     <string name="charging_current">Charging Current</string>
     <string name="charging_current_summary">Set charging current. Caution: Exceeding 1250mA may damage your charging driver.</string>
 
+    <!-- LED -->
+    <string name="fade">Fade</string>
+    <string name="fade_summary">Enable for fading, disable for blinking.</string>
+    <string name="intensity">Intensity</string>
+    <string name="speed">Speed</string>
+    <string name="stock">Stock</string>
+    <string name="continuous_light">Continuous light</string>
+
     <!-- I/O Scheduler -->
     <string name="internal_storage">Internal Storage</string>
     <string name="external_storage">External Storage</string>
@@ -550,6 +559,15 @@
     <string name="light">Light</string>
     <string name="medium">Medium</string>
     <string name="very_aggressive">Very Aggressive</string>
+    <string name="kill_lmk">Kill LMK</string>
+    <string name="kill_lmk_summary">Kill LMK when swap is in use.</string>
+    <string name="kill_lmk_threshold">Kill LMK Threshold</string>
+    <string name="kill_lmk_threshold_summary">How full swap needs to be to kill LMK.</string>
+
+    <!-- Virtual Memory -->
+    <string name="zram">Z-RAM</string>
+    <string name="disksize">Disksize</string>
+    <string name="disksize_summary">Attempts to increase performance by avoiding paging on physical storage, instead using a compressed virtual device in RAM. Paging takes place in RAM until it is necessary to use the swap space on physical storage.</string>
 
     <!-- Entropy -->
     <string name="available">Available</string>
@@ -682,6 +700,7 @@
     <string name="profile_select">Select Profile</string>
     <string name="applying_profile">Applying %s!</string>
     <string name="no_profiles">No profile found! You have to create them first.</string>
+    <string name="sections_disabled">All sections disabled! No profiles for you.</string>
 
     <!-- Init.d -->
     <string name="emulate_initd">Emulate Init.d</string>
@@ -739,7 +758,9 @@
     <string name="old_password_wrong">Old password is wrong</string>
     <string name="password_empty">Password is empty</string>
     <string name="password_not_match">New password doesn\'t match confirmation</string>
-    <string name="password_too_long">Password is too long (max. 32 charactars)</string>
+    <string name="password_too_long">Password is too long (max. 32 characters)</string>
     <string name="set_password_first">Set a password first</string>
     <string name="fingerprint_summary">Use fingerprint to pass security check. This will work as long you have fingerprints registered.</string>
+    <string name="sections">Sections</string>
+    <string name="sections_summary">Restart the app when you changed the visibility of sections below.</string>
 </resources>

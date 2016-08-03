@@ -114,7 +114,7 @@ public class MainActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 0) {
-            launch(data.getIntExtra("result", -1));
+            launch(data == null ? -1 : data.getIntExtra("result", -1));
         } else if (requestCode == 1) {
             launch(0);
         } else if (requestCode == 2) {
@@ -244,7 +244,8 @@ public class MainActivity extends BaseActivity {
                 protected Boolean doInBackground(Void... params) {
                     if (mApplicationInfo != null && mPackageInfo != null && mPackageInfo.versionCode == 130) {
                         mPatched = !Utils.checkMD5("5c7a92a5b2dcec409035e1114e815b00",
-                                new File(mApplicationInfo.publicSourceDir)) || Utils.isPatched(mApplicationInfo);
+                                new File(mApplicationInfo.publicSourceDir))
+                        /*|| Utils.isPatched(mApplicationInfo)*/;
 
                         try {
                             HttpURLConnection urlc = (HttpURLConnection)

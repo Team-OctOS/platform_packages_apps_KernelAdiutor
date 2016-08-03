@@ -243,7 +243,6 @@
   <!--Thermal-->
   <string name="thermal_info">Use apenas um condutor térmico entre as seguintes opções, usando mais do que ao mesmo tempo pode causar um comportamento inesperado.</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Condutor térmico Stock da Qualcomm que impede sobreaquecimento do dispositivo. Isto deve ser desabilitado se o kernel atual tem uma alternativa.</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Uma substituição no kernel para Thermald da Qualcomm. Desenvolvido por faux123.</string>
   <string name="intellithermal_optimized">Intellithermal otimizado</string>
@@ -411,6 +410,7 @@
   <string name="usb_fast_charge_summary">O dispositivo irá carregar mais rápido quando conectado com USB. Reconecte o carregador ao alterar esta opção.</string>
   <string name="blx">Extensor de autonomia da bateria</string>
   <string name="blx_summary">Defina um limite para a capacidade que a bateria será carregada, passando um valor entre 0 e 100.</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">Armazenamento Interno</string>
   <string name="external_storage">Armazenamento Externo</string>

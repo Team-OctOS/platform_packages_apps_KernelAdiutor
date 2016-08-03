@@ -204,7 +204,6 @@
   <!--Thermal-->
   <string name="thermal_info">निम्न विकल्पों में से केवल एक थर्मल ड्राइवर का उपयोग, एक ही समय पर और अधिक का उपयोग अनपेक्षित व्यवहार कारण हो सकता है।</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">स्टॉक Qualcomm थर्मल ड्रायवर डिवाइस overheating से रोकता है। मौजूदा कर्नेल के लिए एक विकल्प है, तो यह अक्षम किया जाना चाहिए।</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">Qualcomm के Thermald के लिए एक कर्नेल में प्रतिस्थापन। Faux123 द्वारा विकसित की है।</string>
   <string name="intellithermal_optimized">Intellithermal अनुकूलित</string>
@@ -372,6 +371,7 @@
   <string name="usb_fast_charge_summary">डिवाइस USB के साथ जुड़ा हुआ, जब तेजी से चार्ज होगा। अपना चार्जर जब इस विकल्प को बदलने replug.</string>
   <string name="blx">बैटरी जीवन भरनेवाला</string>
   <string name="blx_summary">जो करने के लिए बैटरी एक मान 0 और 100 के बीच गुजर चार्ज किया जाएगा क्षमता के लिए एक सीमा सेट।</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">आंतरिक संग्रहण</string>
   <string name="external_storage">बाह्य भंडारण</string>

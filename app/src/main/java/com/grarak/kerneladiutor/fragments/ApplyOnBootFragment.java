@@ -46,6 +46,7 @@ public class ApplyOnBootFragment extends BaseFragment {
     public static final String WAKE = "wake_onboot";
     public static final String SOUND = "sound_onboot";
     public static final String BATTERY = "battery_onboot";
+    public static final String LED = "led_onboot";
     public static final String IO = "io_onboot";
     public static final String KSM = "ksm_onboot";
     public static final String LMK = "lmk_onboot";

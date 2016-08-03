@@ -204,7 +204,6 @@
   <!--Thermal-->
   <string name="thermal_info">一つだけを有効にするようにしてください。同時に複数を有効化すると予期しない動作を引き起こす可能性があります。</string>
   <string name="thermald">Thermald</string>
-  <string name="thermald_summary">Qualcomm製の過熱制御ドライバーです。他の過熱制御ドライバーがある場合は無効にするべきです。</string>
   <string name="intellithermal">Intellithermal</string>
   <string name="intellithermal_summary">faux123氏が開発した、Qualcomm Thermaldの代替です。</string>
   <string name="intellithermal_optimized">Intellithermal Optimized</string>
@@ -373,6 +372,7 @@
   <string name="usb_fast_charge_summary">USB接続時の充電を高速化します。この設定を変更した後は充電器を抜き差ししてください。</string>
   <string name="blx">Battery Life eXtender</string>
   <string name="blx_summary">どの残量になるまで充電するか、0 から 100 までの値で指定します。</string>
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="internal_storage">内部ストレージ</string>
   <string name="external_storage">外部ストレージ</string>

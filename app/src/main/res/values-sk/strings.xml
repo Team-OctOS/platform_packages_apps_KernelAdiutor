@@ -117,6 +117,7 @@
   <!-- Sound -->
   <string name="sound_control">Ovládanie zvuku</string>
   <!-- Battery -->
+  <!-- LED -->
   <!-- I/O Scheduler -->
   <string name="scheduler">Plánovač</string>
   <!-- Kernel Samepage Merging -->

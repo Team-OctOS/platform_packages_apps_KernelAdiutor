@@ -150,20 +150,23 @@ public class CustomControlsFragment extends RecyclerViewFragment {
     protected void init() {
         super.init();
 
-        if (mOptionsDialog != null) {
-            mOptionsDialog.show();
-        }
-        if (mItemsDialog != null) {
-            mItemsDialog.show();
-        }
-        if (mDeleteDialog != null) {
-            mDeleteDialog.show();
-        }
-        if (mExportItem != null) {
-            showExportDialog();
-        }
-        if (mDonateDialog != null) {
-            mDonateDialog.show();
+        try {
+            if (mOptionsDialog != null) {
+                mOptionsDialog.show();
+            }
+            if (mItemsDialog != null) {
+                mItemsDialog.show();
+            }
+            if (mDeleteDialog != null) {
+                mDeleteDialog.show();
+            }
+            if (mExportItem != null) {
+                showExportDialog();
+            }
+            if (mDonateDialog != null) {
+                mDonateDialog.show();
+            }
+        } catch (NullPointerException ignored) {
         }
 
         addViewPagerFragment(DescriptionFragment.newInstance(getString(R.string.welcome),
