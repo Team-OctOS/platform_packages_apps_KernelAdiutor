@@ -73,12 +73,11 @@ public class LEDFragment extends RecyclerViewFragment {
     private void intensityInit(List<RecyclerViewItem> items) {
         SeekBarView intensity = new SeekBarView();
         intensity.setTitle(getString(R.string.intensity));
-        intensity.setMin(1);
-        intensity.setProgress(LED.getIntensity() - 1);
+        intensity.setProgress(LED.getIntensity());
         intensity.setOnSeekBarListener(new SeekBarView.OnSeekBarListener() {
             @Override
             public void onStop(SeekBarView seekBarView, int position, String value) {
-                LED.setIntensity(position + 1, getActivity());
+                LED.setIntensity(position, getActivity());
             }
 
             @Override
