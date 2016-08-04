@@ -41,11 +41,11 @@ public class Misc {
 
     private static final String CPU_QUIET = "/sys/devices/system/cpu/cpuquiet";
     private static final String CPU_QUIET_ENABLE = CPU_QUIET + "/cpuquiet_driver/enabled";
+    private static final String CPU_QUIET_TEGRA_ENABLE = CPU_QUIET + "/tegra_cpuquiet/enable";
     private static final String CPU_QUIET_AVAILABLE_GOVERNORS = CPU_QUIET + "/available_governors";
     private static final String CPU_QUIET_CURRENT_GOVERNOR = CPU_QUIET + "/current_governor";
 
     private static final String CPU_TOUCH_BOOST = "/sys/module/msm_performance/parameters/touchboost";
-
 
     private static String[] sAvailableCFSSchedulers;
     private static String[] sCpuQuietAvailableGovernors;
@@ -83,15 +83,20 @@ public class Misc {
     }
 
     public static void enableCpuQuiet(boolean enabled, Context context) {
-        run(Control.write(enabled ? "1" : "0", CPU_QUIET_ENABLE), CPU_QUIET_ENABLE, context);
+        if (Utils.existFile(CPU_QUIET_ENABLE)) {
+            run(Control.write(enabled ? "1" : "0", CPU_QUIET_ENABLE), CPU_QUIET_ENABLE, context);
+        } else {
+            run(Control.write(enabled ? "1" : "0", CPU_QUIET_TEGRA_ENABLE), CPU_QUIET_TEGRA_ENABLE, context);
+        }
     }
 
     public static boolean isCpuQuietEnabled() {
-        return Utils.readFile(CPU_QUIET_ENABLE).equals("1");
+        return Utils.readFile(Utils.existFile(CPU_QUIET_ENABLE) ? CPU_QUIET_ENABLE
+                : CPU_QUIET_TEGRA_ENABLE).equals("1");
     }
 
     public static boolean hasCpuQuietEnable() {
-        return Utils.existFile(CPU_QUIET_ENABLE);
+        return Utils.existFile(CPU_QUIET_ENABLE) || Utils.existFile(CPU_QUIET_TEGRA_ENABLE);
     }
 
     public static boolean hasCpuQuiet() {
