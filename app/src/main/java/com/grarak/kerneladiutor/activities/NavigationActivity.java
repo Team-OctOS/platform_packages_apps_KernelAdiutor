@@ -258,7 +258,7 @@ public class NavigationActivity extends BaseActivity
                     sFragments.get(id).getClass().getSimpleName() + "_enabled", true, this)) {
                 MenuItem menuItem = lastSubMenu == null ? menu.add(0, id, 0, id) :
                         lastSubMenu.add(0, id, 0, id);
-                menuItem.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_dots));
+                menuItem.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_blank));
                 menuItem.setCheckable(!sActivities.containsKey(id));
                 sActualFragments.put(id, sFragments.get(id));
             }

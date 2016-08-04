@@ -20,6 +20,7 @@
 package com.grarak.kerneladiutor.fragments.kernel;
 
 import com.grarak.kerneladiutor.R;
+import com.grarak.kerneladiutor.fragments.ApplyOnBootFragment;
 import com.grarak.kerneladiutor.fragments.RecyclerViewFragment;
 import com.grarak.kerneladiutor.utils.kernel.led.LED;
 import com.grarak.kerneladiutor.views.recyclerview.RecyclerViewItem;
@@ -33,6 +34,13 @@ import java.util.List;
  * Created by willi on 31.07.16.
  */
 public class LEDFragment extends RecyclerViewFragment {
+
+    @Override
+    protected void init() {
+        super.init();
+
+        addViewPagerFragment(ApplyOnBootFragment.newInstance(ApplyOnBootFragment.LED));
+    }
 
     @Override
     protected void addItems(List<RecyclerViewItem> items) {
@@ -65,12 +73,11 @@ public class LEDFragment extends RecyclerViewFragment {
     private void intensityInit(List<RecyclerViewItem> items) {
         SeekBarView intensity = new SeekBarView();
         intensity.setTitle(getString(R.string.intensity));
-        intensity.setMin(1);
-        intensity.setProgress(LED.getIntensity() - 1);
+        intensity.setProgress(LED.getIntensity());
         intensity.setOnSeekBarListener(new SeekBarView.OnSeekBarListener() {
             @Override
             public void onStop(SeekBarView seekBarView, int position, String value) {
-                LED.setIntensity(position + 1, getActivity());
+                LED.setIntensity(position, getActivity());
             }
 
             @Override

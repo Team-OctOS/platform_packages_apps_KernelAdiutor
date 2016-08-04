@@ -24,6 +24,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.crash.FirebaseCrash;
+
 /**
  * Created by willi on 24.04.16.
  */
@@ -41,7 +43,11 @@ public abstract class RecyclerViewItem {
 
     public void onCreateView(View view) {
         mView = view;
-        refresh();
+        try {
+            refresh();
+        } catch (Exception e) {
+            FirebaseCrash.log(e.getMessage());
+        }
     }
 
     @LayoutRes

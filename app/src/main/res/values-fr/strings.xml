@@ -360,6 +360,7 @@
   <string name="light">Léger</string>
   <string name="medium">Moyen</string>
   <string name="very_aggressive">Très agressif</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Disponible</string>
   <string name="poolsize">Taille du réservoir (threads poolsize)</string>

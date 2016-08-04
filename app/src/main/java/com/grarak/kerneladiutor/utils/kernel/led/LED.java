@@ -30,9 +30,9 @@ import com.grarak.kerneladiutor.utils.root.Control;
  */
 public class LED {
 
-    private static final String LED_RED_FADE = "/sys/class/leds/red/device/led_fade";
-    private static final String LED_RED_INTENSITY = "/sys/class/leds/red/device/led_intensity";
-    private static final String LED_RED_SPEED = "/sys/class/leds/red/device/led_speed";
+    private static final String LED_RED_FADE = "/sys/class/leds/red/led_fade";
+    private static final String LED_RED_INTENSITY = "/sys/class/leds/red/led_intensity";
+    private static final String LED_RED_SPEED = "/sys/class/leds/red/led_speed";
 
     public static void setSpeed(int value, Context context) {
         run(Control.write(String.valueOf(value), LED_RED_SPEED), LED_RED_SPEED, context);

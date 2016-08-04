@@ -393,6 +393,7 @@
   <string name="light">हल्का</string>
   <string name="medium">मध्य</string>
   <string name="very_aggressive">बहुत आक्रामक</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">उपलब्ध</string>
   <string name="poolsize">Poolsize</string>

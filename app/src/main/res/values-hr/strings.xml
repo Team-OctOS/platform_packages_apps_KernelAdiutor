@@ -364,6 +364,7 @@
   <string name="light">Lagano</string>
   <string name="medium">Srednje</string>
   <string name="very_aggressive">Vrlo agresivno</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Dostupno</string>
   <string name="read">Čitanje</string>

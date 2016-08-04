@@ -32,15 +32,31 @@ import com.grarak.kerneladiutor.utils.Utils;
 import com.grarak.kerneladiutor.views.recyclerview.CardView;
 import com.grarak.kerneladiutor.views.recyclerview.DescriptionView;
 import com.grarak.kerneladiutor.views.recyclerview.RecyclerViewItem;
-import com.mikepenz.aboutlibraries.Libs;
-import com.mikepenz.aboutlibraries.entity.Library;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
  * Created by willi on 22.07.16.
  */
 public class AboutFragment extends RecyclerViewFragment {
+
+    private static final LinkedHashMap<String, String> sLibraries = new LinkedHashMap<>();
+
+    static {
+        sLibraries.put("Google,v4 Support Library", "https://developer.android.com/topic/libraries/support-library/features.html#v4");
+        sLibraries.put("Google,v7 appcompat library", "https://developer.android.com/topic/libraries/support-library/features.html#v7");
+        sLibraries.put("Google,v7 cardview library", "https://developer.android.com/topic/libraries/support-library/features.html#v7");
+        sLibraries.put("Google,Design Support Library", "https://developer.android.com/topic/libraries/support-library/features.html#design");
+        sLibraries.put("Google,v7 recyclerview library", "https://developer.android.com/topic/libraries/support-library/features.html#v7");
+        sLibraries.put("Ozodrukh,CircularReveal", "https://github.com/ozodrukh/CircularReveal");
+        sLibraries.put("Roman Nurik,dashclock", "https://github.com/romannurik/dashclock");
+        sLibraries.put("Google,Firebase", "https://firebase.google.com");
+        sLibraries.put("Matthew Precious,swirl", "https://github.com/mattprecious/swirl");
+        sLibraries.put("Lopez Mikhael,CircularImageView", "https://github.com/lopspower/CircularImageView");
+        sLibraries.put("Square,picasso", "https://github.com/square/picasso");
+        sLibraries.put("CyanogenMod,CyanogenMod Platform SDK", "https://github.com/CyanogenMod/cm_platform_sdk");
+    }
 
     @Override
     protected void init() {
@@ -58,28 +74,14 @@ public class AboutFragment extends RecyclerViewFragment {
         CardView cardView = new CardView(getActivity());
         cardView.setTitle(getString(R.string.libraries_used));
 
-        Libs libs = new Libs(getActivity());
-        libs.prepareLibraries(getActivity(), null, null, true, true);
-
-        for (final Library lib : libs.getAutoDetectedLibraries(getActivity())) {
+        for (final String lib : sLibraries.keySet()) {
             DescriptionView descriptionView = new DescriptionView();
-            descriptionView.setTitle(Utils.htmlFrom(lib.getLibraryName()) + " - " + lib.getAuthor());
-            descriptionView.setSummary(Utils.htmlFrom(lib.getLibraryDescription()));
+            descriptionView.setTitle(lib.split(",")[1]);
+            descriptionView.setSummary(lib.split(",")[0]);
             descriptionView.setOnItemClickListener(new RecyclerViewItem.OnItemClickListener() {
                 @Override
                 public void onClick(RecyclerViewItem item) {
-                    String link = null;
-                    if (lib.getLibraryWebsite() != null) {
-                        link = lib.getLibraryWebsite();
-                    } else if (lib.getRepositoryLink() != null) {
-                        link = lib.getRepositoryLink();
-                    } else if (lib.getAuthorWebsite() != null) {
-                        link = lib.getAuthorWebsite();
-                    }
-
-                    if (link != null && !link.isEmpty()) {
-                        Utils.launchUrl(link, getActivity());
-                    }
+                    Utils.launchUrl(sLibraries.get(lib), getActivity());
                 }
             });
 

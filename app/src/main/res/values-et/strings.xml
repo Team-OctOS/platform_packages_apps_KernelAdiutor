@@ -93,6 +93,7 @@
   <!-- I/O Scheduler -->
   <!-- Kernel Samepage Merging -->
   <!-- Low Memory Killer -->
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <!-- Misc -->
   <string name="hybrid">Hübriid</string>

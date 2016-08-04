@@ -334,6 +334,7 @@
   <string name="light">Легкий</string>
   <string name="medium">Середній</string>
   <string name="very_aggressive">Дуже агресивний</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <!-- Misc -->
   <string name="network">Мережа</string>

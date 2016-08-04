@@ -9,6 +9,8 @@
   <string name="no_root">Kein Root</string>
   <string name="no_busybox">Kein busybox</string>
   <!-- Security -->
+  <string name="password">Passwort</string>
+  <string name="password_wrong">Das Passwort ist falsch</string>
   <string name="select_picture">Bild auswählen</string>
   <string name="no_picture">kein Bild</string>
   <string name="went_wrong">Etwas ist schief gelaufen!</string>
@@ -16,6 +18,7 @@
   <string name="cancel">Abbrechen</string>
   <string name="ok">OK</string>
   <string name="unknown">Unbekannt</string>
+  <string name="donate">Spende</string>
   <string name="apply_on_boot">Beim Systemstart anwenden</string>
   <!-- Permissions Denied -->
   <!-- Editor -->
@@ -48,21 +51,30 @@
   <string name="ksm">Kernel Samepage Merging</string>
   <string name="virtual_memory">Virtueller Speicher</string>
   <string name="entropy">Entropie</string>
+  <string name="misc">Verschiedenes</string>
   <string name="downloads">Downloads</string>
   <string name="backup">Sicherung</string>
   <string name="build_prop_editor">Build prop-Bearbeiter</string>
   <string name="profile">Profil</string>
   <string name="recovery">Recovery</string>
   <string name="initd">Init.d</string>
+  <string name="about">Über uns</string>
+  <string name="faq">FAQ</string>
   <string name="settings">Einstellungen</string>
   <!-- Overall -->
   <string name="offline">Ausgeschaltet</string>
   <string name="core">Kern %d</string>
+  <string name="temperature">Temperatur</string>
+  <string name="refresh">Aktualisieren</string>
+  <string name="reset">Zurücksetzen</string>
   <string name="restore">Wiederherstellen</string>
+  <string name="deep_sleep">Tiefschlaf</string>
   <string name="uptime">Laufzeit</string>
   <!-- Device -->
   <string name="features">Features</string>
   <!-- Inputs -->
+  <string name="bus">Bus</string>
+  <string name="product">Produkt</string>
   <!-- CPU -->
   <string name="cpu_max_freq">Maximale CPU-Frequenz</string>
   <string name="cpu_max_freq_summary">Ändere die maximale Taktfrequenz der CPU.</string>
@@ -189,6 +201,7 @@
   <string name="sampling_rate">Sampling-Rate</string>
   <string name="cpu_down_rate">CPU-Down Rate</string>
   <string name="cpu_up_rate">CPU-Up Rate</string>
+  <string name="thunderplug">ThunderPlug</string>
   <string name="endurance_level">Ausdauer Level</string>
   <string name="endurance_level_summary">Ein Stromeinsparungsprofil.</string>
   <string name="quad_core_mode">Quad-Core-Modus</string>
@@ -206,6 +219,7 @@
   <string name="cycle_up">Zyklus nach oben</string>
   <string name="core_control">Kern Steuerung</string>
   <!--Thermal-->
+  <string name="warning">Warnung</string>
   <string name="thermal_info">Verwenden sie nur einen thermischen Sensor für folgende Optionen. Die Verwendung von mehreren kann zu unerwartetem Verhalten führen.</string>
   <string name="thermald">Thermal</string>
   <string name="intellithermal">Intellithermal</string>
@@ -382,6 +396,7 @@
   <string name="light">Sanft</string>
   <string name="medium">Mittel</string>
   <string name="very_aggressive">Sehr aggressiv</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Verfügbar</string>
   <string name="read">Lesen</string>

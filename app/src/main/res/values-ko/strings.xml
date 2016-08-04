@@ -360,6 +360,7 @@
   <string name="light">가볍게</string>
   <string name="medium">적당하게</string>
   <string name="very_aggressive">매우 적극적이게</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">사용 가능</string>
   <string name="read">읽기</string>

@@ -318,6 +318,7 @@
   <string name="light">Hafif</string>
   <string name="medium">Ortalama</string>
   <string name="very_aggressive">Çok Agresif</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Kullanılabilir</string>
   <string name="poolsize">HavuzBoyutu</string>

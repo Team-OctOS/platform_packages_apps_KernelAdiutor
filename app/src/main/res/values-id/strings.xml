@@ -391,6 +391,7 @@
   <string name="light">Ringan</string>
   <string name="medium">Menengah</string>
   <string name="very_aggressive">Sangat Agresif</string>
+  <!-- Virtual Memory -->
   <!-- Entropy -->
   <string name="available">Tersedia</string>
   <string name="poolsize">Poolsize</string>

@@ -356,7 +356,7 @@ public class CPUFreq {
                 list.add(i);
             }
         } else if (getLITTLECpu() == 0) {
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < getBigCpu(); i++) {
                 list.add(i);
             }
         } else {
@@ -374,7 +374,7 @@ public class CPUFreq {
                 list.add(i);
             }
         } else if (getBigCpu() == 0) {
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < getLITTLECpu(); i++) {
                 list.add(i);
             }
         } else {
